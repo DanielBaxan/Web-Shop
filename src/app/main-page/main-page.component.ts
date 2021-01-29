@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
+const facebookUrl = 'https://www.facebook.com/denimisourworld/'
+const instagramUrl = 'https://www.instagram.com/guess_moldova/'
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -9,4 +12,17 @@ export class MainPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  goToUrl(website: string): void {
+    switch (website) {
+      case 'facebook': {
+        window.open(facebookUrl, '_blank')
+        break
+      }
+      case 'instagram': {
+        window.open(instagramUrl, '_blank')
+        break
+      }
+    }
+  }
 }
