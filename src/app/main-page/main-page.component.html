@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header-desktop">
   <div class="top-header">
     <div class="flex-row container">
       <div class="flex-col hide-for-medium flex-left"></div>
@@ -37,13 +37,69 @@
     </div>
   </div>
   <div class="wide-nav">
-    <button mat-button [matMenuTriggerFor]="menu" color="accent">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
+    <div class="flex-row container">
+      <div class="flex-col hide-for-medium flex-left">
+        <button mat-button [matMenuTriggerFor]="menuNewArrivals" color="accent">
+          NEW ARRIVALS
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menuNewArrivals="matMenu">
+          <button mat-menu-item><strong>FEMEI</strong></button>
+          <button mat-menu-item>HAINE</button>
+          <button mat-menu-item>ÎNCĂLȚĂMINTE</button>
+          <button mat-menu-item>DENIM</button>
+          <button mat-menu-item>GENȚI</button>
+          <button mat-menu-item>ACCESORII</button>
+          <button mat-menu-item><strong>BĂRBAȚI</strong></button>
+          <button mat-menu-item>HAINE</button>
+          <button mat-menu-item>ÎNCĂLȚĂMINTE</button>
+          <button mat-menu-item>DENIM</button>
+          <button mat-menu-item>GENȚI</button>
+          <button mat-menu-item>ACCESORII</button>
+          <button mat-menu-item><strong>COPII</strong></button>
+          <button mat-menu-item>FETE</button>
+          <button mat-menu-item>BĂIEȚI</button>
+        </mat-menu>
 
-    <input mat-input placeholder="Caută..." />
-    <mat-icon color="accent">search</mat-icon>
+        <button mat-button [matMenuTriggerFor]="menuWomen" color="accent">
+          FEMEI
+        </button>
+        <mat-menu #menuWomen="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menuMan" color="accent">
+          BĂRBAȚI
+        </button>
+        <mat-menu #menuMan="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menuMarciano" color="accent">
+          MARCIANO
+        </button>
+        <mat-menu #menuMarciano="matMenu">
+          <button mat-menu-item>FEMEI</button>
+          <button mat-menu-item>BĂRBAȚI</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
+          COPII
+        </button>
+        <mat-menu #menuKids="matMenu">
+          <button mat-menu-item>FETE</button>
+          <button mat-menu-item>BĂIEȚI</button>
+        </mat-menu>
+      </div>
+      <div class="search-bar">
+        <input mat-input placeholder="Caută..." />
+        <mat-icon id="search-icon" color="accent">search</mat-icon>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- TODO: Alternative header, other elements are ok -->
+<div class="header-mobile" style="display: none"></div>
