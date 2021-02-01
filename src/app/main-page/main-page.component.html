@@ -32,58 +32,67 @@
           <button mat-raised-button color="primary">AUTENTIFICARE</button>
         </div>
         <div class="line-divider"></div>
-        <div class="basket"></div>
+        <div class="basket">
+          <div class="basket-text">COȘ / 0,00 MDL</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="wide-nav">
     <div class="flex-row container">
       <div class="flex-col hide-for-medium flex-left">
-        <button mat-button [matMenuTriggerFor]="menuNewArrivals" color="accent">
-          NEW ARRIVALS
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </button>
-        <mat-menu #menuNewArrivals="matMenu">
-          <button mat-menu-item><strong>FEMEI</strong></button>
-          <button mat-menu-item>HAINE</button>
-          <button mat-menu-item>ÎNCĂLȚĂMINTE</button>
-          <button mat-menu-item>DENIM</button>
-          <button mat-menu-item>GENȚI</button>
-          <button mat-menu-item>ACCESORII</button>
-          <button mat-menu-item><strong>BĂRBAȚI</strong></button>
-          <button mat-menu-item>HAINE</button>
-          <button mat-menu-item>ÎNCĂLȚĂMINTE</button>
-          <button mat-menu-item>DENIM</button>
-          <button mat-menu-item>GENȚI</button>
-          <button mat-menu-item>ACCESORII</button>
-          <button mat-menu-item><strong>COPII</strong></button>
-          <button mat-menu-item>FETE</button>
-          <button mat-menu-item>BĂIEȚI</button>
-        </mat-menu>
+        <app-auto-open-menu>
+          <button trigger mat-button>
+            NEW ARRIVALS <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <div content>
+            <span mat-menu-item><strong>FEMEI</strong></span>
+            <span mat-menu-item>HAINE</span>
+            <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
+            <span mat-menu-item>DENIM</span>
+            <span mat-menu-item>GENȚI</span>
+            <span mat-menu-item>ACCESORII</span>
+            <span mat-menu-item><strong>BĂRBAȚI</strong></span>
+            <span mat-menu-item>HAINE</span>
+            <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
+            <span mat-menu-item>DENIM</span>
+            <span mat-menu-item>GENȚI</span>
+            <span mat-menu-item>ACCESORII</span>
+            <span mat-menu-item><strong>COPII</strong></span>
+            <span mat-menu-item>FETE</span>
+            <span mat-menu-item>BĂIEȚI</span>
+          </div>
+        </app-auto-open-menu>
 
-        <button mat-button [matMenuTriggerFor]="menuWomen" color="accent">
-          FEMEI
-        </button>
-        <mat-menu #menuWomen="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
+        <app-auto-open-menu>
+          <button trigger mat-button>
+            FEMEI <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <div content>
+            <span mat-menu-item>TEST1</span>
+            <span mat-menu-item>TEST2</span>
+          </div>
+        </app-auto-open-menu>
 
-        <button mat-button [matMenuTriggerFor]="menuMan" color="accent">
-          BĂRBAȚI
-        </button>
-        <mat-menu #menuMan="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
+        <app-auto-open-menu>
+          <button trigger mat-button>
+            BĂRBAȚI <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <div content>
+            <span mat-menu-item>TEST1</span>
+            <span mat-menu-item>TEST2</span>
+          </div>
+        </app-auto-open-menu>
 
-        <button mat-button [matMenuTriggerFor]="menuMarciano" color="accent">
-          MARCIANO
-        </button>
-        <mat-menu #menuMarciano="matMenu">
-          <button mat-menu-item>FEMEI</button>
-          <button mat-menu-item>BĂRBAȚI</button>
-        </mat-menu>
+        <app-auto-open-menu>
+          <button trigger mat-button>
+            MARCIANO <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <div content>
+            <span mat-menu-item>FEMEI</span>
+            <span mat-menu-item>BĂRBAȚI</span>
+          </div>
+        </app-auto-open-menu>
 
         <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
           COPII
