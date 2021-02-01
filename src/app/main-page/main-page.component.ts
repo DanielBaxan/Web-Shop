@@ -9,7 +9,12 @@ const instagramUrl = 'https://www.instagram.com/guess_moldova/'
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  public siteLang = 'En'
   constructor() {}
+
+  changeLanguage(ev: string): void{
+    this.siteLang = ev
+  }
 
   ngOnInit(): void {}
 
