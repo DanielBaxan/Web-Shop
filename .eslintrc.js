@@ -116,11 +116,11 @@ module.exports = {
       'error',
       {
         multiline: {
-          delimiter: 'semi',
+          delimiter: 'none',
           requireLast: true
         },
         singleline: {
-          delimiter: 'semi',
+          delimiter: 'none',
           requireLast: false
         }
       }

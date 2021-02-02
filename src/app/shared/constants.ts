@@ -1,13 +1,10 @@
 export interface Lang {
-  code: string;
-  label: string;
+  code: string
+  label: string
 }
 
-export const  languageList: Array<Lang> = [
-  { code: 'En', label: 'English' },
-  { code: 'Fr', label: 'Français' },
-  { code: 'De', label: 'Deutsch' },
-  { code: 'Ru', label: 'Русский' }
+export const languageList: Array<Lang> = [
+  { code: 'en', label: 'English' },
+  { code: 'ro', label: 'Romanian' },
+  { code: 'ru', label: 'Русский' }
 ]
-
-
