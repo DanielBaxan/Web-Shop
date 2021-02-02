@@ -63,6 +63,15 @@
         margin: 0 7.5px;
       }
     }
+    .basket {
+      display: inline-flex;
+      align-items: center;
+
+      .basket-text {
+        font-size: 1.1em;
+        font-weight: 700;
+      }
+    }
   }
 
   .wide-nav {
