@@ -71,6 +71,12 @@
         font-size: 1.1em;
         font-weight: 700;
       }
+
+      .basket-icon {
+        color: green;
+        // border: 1px black solid;
+        // outline: 1px black solid;
+      }
     }
   }
 
@@ -102,4 +108,18 @@
       opacity: 1;
     }
   }
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.first-slide {
+  background-color: red;
+  width: 100%;
+  padding-top: 650px;
 }
