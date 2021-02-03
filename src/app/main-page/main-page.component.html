@@ -28,6 +28,12 @@
         <div class="line-divider"></div>
         <div class="basket">
           <div class="basket-text">COȘ / 0,00 MDL</div>
+          <mdb-icon
+            fas
+            class="basket-icon"
+            icon="shopping-bag"
+            size="3x"
+          ></mdb-icon>
         </div>
       </div>
     </div>
@@ -90,7 +96,7 @@
             MARCIANO <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
           <div content>
-            <span mat-menu-item>FEMEI</span>
+            <span mat-menu-item>{{ 'FEMEI' | translate }}</span>
             <span mat-menu-item>BĂRBAȚI</span>
           </div>
         </app-auto-open-menu>
@@ -114,35 +120,47 @@
 <!-- TODO: Alternative header, other elements are ok -->
 <div class="header-mobile" style="display: none"></div>
 
-<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-  <mdb-carousel-item>
-    <div class="view w-100">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" />
-      <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
-    </div>
-    <div class="carousel-caption">
-      <h3 class="h3-responsive">Light mask</h3>
-      <p>First text</p>
-    </div>
-  </mdb-carousel-item>
-  <mdb-carousel-item>
-    <div class="view w-100">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide" />
-      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-    </div>
-    <div class="carousel-caption">
-      <h3 class="h3-responsive">Strong mask</h3>
-      <p>Secondary text</p>
-    </div>
-  </mdb-carousel-item>
-  <mdb-carousel-item>
-    <div class="view w-100">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide" />
-      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-    </div>
-    <div class="carousel-caption">
-      <h3 class="h3-responsive">Slight mask</h3>
-      <p>Third text</p>
-    </div>
-  </mdb-carousel-item>
-</mdb-carousel>
+<div class="banner">
+  <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <!-- <img
+          class="d-block w-100"
+          src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+          alt="First slide"
+        /> -->
+        <div class="first-slide w-100"></div>
+        <div class="centered">SALE -40%</div>
+        <!-- <div class="mask rgba-black-light waves-light" mdbWavesEffect></div> -->
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img
+          class="d-block w-100"
+          src="assets/banner/banner2.png"
+          alt="Second slide"
+        />
+        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img
+          class="d-block w-100"
+          src="assets/banner/banner3.png"
+          alt="Third slide"
+        />
+        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Slight mask</h3>
+        <p>Third text</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>
