@@ -1,112 +1,199 @@
-.header-desktop {
-  width: 100%;
-
-  .flex-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+// Desktop
+@media only screen and (min-width: 1224px) {
+  .header-desktop {
     width: 100%;
-  }
-  .container {
-    max-width: 1155px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .top-header {
-    background-color: black;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-
-    .center-text {
-      color: white;
-      font-size: 110%;
-      font-weight: 500;
+    .flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .container {
+      max-width: 1155px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .mat-icon {
-      color: white;
+    .top-header {
+      background-color: black;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+
+      .center-text {
+        color: white;
+        font-size: 110%;
+        font-weight: 500;
+      }
+
+      .mat-icon {
+        color: white;
+      }
+
+      .facebook-icon {
+        height: 12px;
+        width: 12px;
+        margin-right: 4px;
+      }
+
+      .instagram-icon {
+        height: 12px;
+        width: 12px;
+      }
+    }
+    .main-header {
+      background-color: white;
+      height: 70px;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        max-width: 75%;
+      }
+
+      .right-container {
+        display: flex;
+
+        .line-divider {
+          border-left: 1px solid rgba(0, 0, 0, 0.1);
+          height: 30px;
+          vertical-align: middle;
+          position: relative;
+          margin: 0 7.5px;
+        }
+      }
+      .basket {
+        display: inline-flex;
+        align-items: center;
+
+        .basket-text {
+          font-size: 1.1em;
+          font-weight: 700;
+        }
+
+        .basket-icon {
+          color: green;
+          // border: 1px black solid;
+          // outline: 1px black solid;
+        }
+      }
+    }
+
+    .wide-nav {
+      background-color: black;
+      min-height: 43px;
+      display: flex;
+      justify-content: space-between;
+
+      .search-bar {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      mat-button {
+        padding-right: 0;
+      }
+
+      mat-icon {
+        opacity: 0.6;
+        color: white;
+        font-size: 18px;
+      }
+
+      #search-icon {
+        padding-left: 5px;
+        font-size: 22px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .header-mobile {
+    display: none;
+  }
+}
+
+// Mobile devices / Tablets
+@media only screen and (max-width: 1224px) {
+  .top-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: black;
+    min-height: 40px;
+    color: white;
+
+    .center-text {
+      font-size: 100%;
+      font-weight: 575;
     }
 
     .facebook-icon {
       height: 12px;
       width: 12px;
       margin-right: 4px;
+      margin-top: -6px;
     }
 
     .instagram-icon {
       height: 12px;
       width: 12px;
+      margin-top: -6px;
+    }
+
+    .line-divider {
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      height: 30px;
+      vertical-align: middle;
+      position: relative;
+      margin: 0 7.5px;
     }
   }
+
   .main-header {
-    background-color: white;
-    height: 70px;
-    display: flex;
-    align-items: center;
+    .flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 70px;
+    }
+
+    .container {
+      max-width: 1155px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .logo {
-      max-width: 75%;
-    }
-
-    .right-container {
-      display: flex;
-
-      .line-divider {
-        border-left: 1px solid rgba(0, 0, 0, 0.1);
-        height: 30px;
-        vertical-align: middle;
-        position: relative;
-        margin: 0 7.5px;
-      }
-    }
-    .basket {
-      display: inline-flex;
-      align-items: center;
-
-      .basket-text {
-        font-size: 1.1em;
-        font-weight: 700;
-      }
-
-      .basket-icon {
-        color: green;
-        // border: 1px black solid;
-        // outline: 1px black solid;
-      }
+      height: auto;
     }
   }
 
-  .wide-nav {
-    background-color: black;
-    min-height: 43px;
-    display: flex;
-    justify-content: space-between;
+  .sidenav-wrapper {
+    padding: 30px 0;
 
     .search-bar {
+      padding: 20px;
       flex: 1;
       display: flex;
       justify-content: flex-end;
-    }
 
-    mat-button {
-      padding-right: 0;
+      #search-icon-sidenav {
+        background-color: black;
+      }
     }
+  }
 
-    mat-icon {
-      opacity: 0.6;
-      color: white;
-      font-size: 18px;
-    }
-
-    #search-icon {
-      padding-left: 5px;
-      font-size: 22px;
-      opacity: 1;
-    }
+  .header-desktop {
+    display: none;
   }
 }
 
@@ -122,4 +209,15 @@
   background-color: red;
   width: 100%;
   padding-top: 650px;
+}
+
+.menu-category {
+  margin: 0 10px;
+  padding: 0px;
+}
+
+.menu-item {
+  margin: 0 10px;
+  padding: 0px;
+  border-top: 1px solid #ececec;
 }

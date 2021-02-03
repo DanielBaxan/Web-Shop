@@ -2,16 +2,27 @@
   <div class="top-header">
     <div class="flex-row container">
       <div class="flex-col hide-for-medium flex-left">
-        <app-lang-button [siteLanguage]="siteLang" (changeLanguage)="changeLanguage($event)"></app-lang-button>
+        <app-lang-button
+          [siteLanguage]="siteLang"
+          (changeLanguage)="changeLanguage($event)"
+        ></app-lang-button>
       </div>
       <div class="flex-col hide-for-medium flex-center">
         <div class="center-text">WINTER SALE -40%</div>
       </div>
       <div class="flex-col hide-for-medium flex-right">
-        <mat-icon class="facebook-icon" svgIcon="facebook" matTooltip="Follow on Facebook"
-          (click)="goToUrl('facebook')"></mat-icon>
-        <mat-icon class="instagram-icon" svgIcon="instagram" matTooltip="Follow on Instagram"
-          (click)="goToUrl('instagram')"></mat-icon>
+        <mat-icon
+          class="facebook-icon"
+          svgIcon="facebook"
+          matTooltip="Follow on Facebook"
+          (click)="goToUrl('facebook')"
+        ></mat-icon>
+        <mat-icon
+          class="instagram-icon"
+          svgIcon="instagram"
+          matTooltip="Follow on Instagram"
+          (click)="goToUrl('instagram')"
+        ></mat-icon>
       </div>
     </div>
   </div>
@@ -43,31 +54,41 @@
       <div class="flex-col hide-for-medium flex-left">
         <app-auto-open-menu>
           <button trigger mat-button>
-            {{"Colectii noi" | translate}} <mat-icon>keyboard_arrow_down</mat-icon>
+            {{ 'Colectii noi' | translate }}
+            <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
           <div content fxLayout="raw" fxLayoutAlign="space-around start">
             <div fxLayout="column" fxFlex="33">
-              <span mat-menu-item><strong>{{"FEMEI" | translate}}</strong></span>
-              <span mat-menu-item>HAINE</span>
-              <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
-              <span mat-menu-item>DENIM</span>
-              <span mat-menu-item>GENȚI</span>
-              <span mat-menu-item>ACCESORII</span>
+              <span class="menu-category" mat-menu-item
+                ><strong>{{ 'FEMEI' | translate }}</strong></span
+              >
+              <span class="menu-item" mat-menu-item>HAINE</span>
+              <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
+              <span class="menu-item" mat-menu-item>DENIM</span>
+              <span class="menu-item" mat-menu-item>GENȚI</span>
+              <span class="menu-item" mat-menu-item>ACCESORII</span>
             </div>
             <div fxLayout="column" fxFlex="33">
-              <span mat-menu-item><strong>BĂRBAȚI</strong></span>
-              <span mat-menu-item>HAINE</span>
-              <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
-              <span mat-menu-item>DENIM</span>
-              <span mat-menu-item>GENȚI</span>
-              <span mat-menu-item>ACCESORII</span>
+              <span class="menu-category" mat-menu-item
+                ><strong>BĂRBAȚI</strong></span
+              >
+              <span class="menu-item" mat-menu-item>HAINE</span>
+              <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
+              <span class="menu-item" mat-menu-item>DENIM</span>
+              <span class="menu-item" mat-menu-item>GENȚI</span>
+              <span class="menu-item" mat-menu-item>ACCESORII</span>
             </div>
             <div fxLayout="column">
-              <span mat-menu-item><strong>{{"COPII" | translate}}</strong></span>
-              <span mat-menu-item>{{"FETE" | translate}}</span>
-              <span mat-menu-item>{{"BAIETI" | translate}}</span>
+              <span class="menu-category" mat-menu-item
+                ><strong>{{ 'COPII' | translate }}</strong></span
+              >
+              <span class="menu-item" mat-menu-item>{{
+                'FETE' | translate
+              }}</span>
+              <span class="menu-item" mat-menu-item>{{
+                'BAIETI' | translate
+              }}</span>
             </div>
-
           </div>
         </app-auto-open-menu>
 
@@ -102,7 +123,7 @@
         </app-auto-open-menu>
 
         <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
-          {{"COPII" | translate}}
+          {{ 'COPII' | translate }}
         </button>
         <mat-menu #menuKids="matMenu">
           <button mat-menu-item>FETE</button>
@@ -118,49 +139,99 @@
 </div>
 
 <!-- TODO: Alternative header, other elements are ok -->
-<div class="header-mobile" style="display: none"></div>
+<mat-drawer-container>
+  <div class="header-mobile">
+    <div class="top-header">
+      <div class="center-text">WINTER SALE -40%</div>
+      <div class="line-divider"></div>
+      <mat-icon
+        class="facebook-icon"
+        svgIcon="facebook"
+        matTooltip="Follow on Facebook"
+        (click)="goToUrl('facebook')"
+      ></mat-icon>
+      <mat-icon
+        class="instagram-icon"
+        svgIcon="instagram"
+        matTooltip="Follow on Instagram"
+        (click)="goToUrl('instagram')"
+      ></mat-icon>
+    </div>
+    <div class="main-header">
+      <div class="flex-row container">
+        <div class="flex-col hide-for-medium flex-left">
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="flex-col hide-for-medium flex-center">
+          <img class="logo" src="assets/logo.png" />
+        </div>
+        <div class="flex-col hide-for-medium flex-right right-container">
+          <div class="basket">
+            <mdb-icon
+              fas
+              class="basket-icon"
+              icon="shopping-bag"
+              size="3x"
+            ></mdb-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="banner">
-  <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <!-- <img
+  <div class="banner">
+    <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <!-- <img
           class="d-block w-100"
           src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
           alt="First slide"
         /> -->
-        <div class="first-slide w-100"></div>
-        <div class="centered">SALE -40%</div>
-        <!-- <div class="mask rgba-black-light waves-light" mdbWavesEffect></div> -->
+          <div class="first-slide w-100"></div>
+          <div class="centered">SALE -40%</div>
+          <!-- <div class="mask rgba-black-light waves-light" mdbWavesEffect></div> -->
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <img
+            class="d-block w-100"
+            src="assets/banner/banner2.png"
+            alt="Second slide"
+          />
+          <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Strong mask</h3>
+          <p>Secondary text</p>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <img
+            class="d-block w-100"
+            src="assets/banner/banner3.png"
+            alt="Third slide"
+          />
+          <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Slight mask</h3>
+          <p>Third text</p>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+
+  <mat-sidenav #sidenav position="start" role="directory">
+    <div class="sidenav-wrapper">
+      <div class="search-bar">
+        <input mat-input placeholder="Caută..." />
+        <mat-icon id="search-icon-sidenav" color="accent">search</mat-icon>
       </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img
-          class="d-block w-100"
-          src="assets/banner/banner2.png"
-          alt="Second slide"
-        />
-        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">Strong mask</h3>
-        <p>Secondary text</p>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img
-          class="d-block w-100"
-          src="assets/banner/banner3.png"
-          alt="Third slide"
-        />
-        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">Slight mask</h3>
-        <p>Third text</p>
-      </div>
-    </mdb-carousel-item>
-  </mdb-carousel>
-</div>
+    </div>
+  </mat-sidenav>
+</mat-drawer-container>
