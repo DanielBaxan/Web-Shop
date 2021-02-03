@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { TranslateService } from '@ngx-translate/core'
+import {environment} from '../../environments/environment'
 
 const facebookUrl = 'https://www.facebook.com/denimisourworld/'
 const instagramUrl = 'https://www.instagram.com/guess_moldova/'
@@ -10,13 +11,13 @@ const instagramUrl = 'https://www.instagram.com/guess_moldova/'
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  siteLang = 'ro'
+  public siteLang = 'ro'
   constructor(private translateService: TranslateService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translateService.setDefaultLang('ro')
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translateService.use('ro')
+    translateService.use(environment.defaultLanguage || 'ro')
   }
 
   changeLanguage(ev: string): void {

@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -35,6 +36,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     BrowserAnimationsModule,
     MaterialComponentsModule,
     HttpClientModule,
+    FlexLayoutModule,
     TranslateModule.forRoot({
       defaultLanguage: 'ro',
       loader: {

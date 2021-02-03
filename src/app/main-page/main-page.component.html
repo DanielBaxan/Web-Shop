@@ -2,27 +2,16 @@
   <div class="top-header">
     <div class="flex-row container">
       <div class="flex-col hide-for-medium flex-left">
-        <app-lang-button
-          [siteLanguage]="siteLang"
-          (changeLanguage)="changeLanguage($event)"
-        ></app-lang-button>
+        <app-lang-button [siteLanguage]="siteLang" (changeLanguage)="changeLanguage($event)"></app-lang-button>
       </div>
       <div class="flex-col hide-for-medium flex-center">
         <div class="center-text">WINTER SALE -40%</div>
       </div>
       <div class="flex-col hide-for-medium flex-right">
-        <mat-icon
-          class="facebook-icon"
-          svgIcon="facebook"
-          matTooltip="Follow on Facebook"
-          (click)="goToUrl('facebook')"
-        ></mat-icon>
-        <mat-icon
-          class="instagram-icon"
-          svgIcon="instagram"
-          matTooltip="Follow on Instagram"
-          (click)="goToUrl('instagram')"
-        ></mat-icon>
+        <mat-icon class="facebook-icon" svgIcon="facebook" matTooltip="Follow on Facebook"
+          (click)="goToUrl('facebook')"></mat-icon>
+        <mat-icon class="instagram-icon" svgIcon="instagram" matTooltip="Follow on Instagram"
+          (click)="goToUrl('instagram')"></mat-icon>
       </div>
     </div>
   </div>
@@ -54,24 +43,31 @@
       <div class="flex-col hide-for-medium flex-left">
         <app-auto-open-menu>
           <button trigger mat-button>
-            NEW ARRIVALS <mat-icon>keyboard_arrow_down</mat-icon>
+            {{"Colectii noi" | translate}} <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
-          <div content>
-            <span mat-menu-item><strong>FEMEI</strong></span>
-            <span mat-menu-item>HAINE</span>
-            <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
-            <span mat-menu-item>DENIM</span>
-            <span mat-menu-item>GENȚI</span>
-            <span mat-menu-item>ACCESORII</span>
-            <span mat-menu-item><strong>BĂRBAȚI</strong></span>
-            <span mat-menu-item>HAINE</span>
-            <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
-            <span mat-menu-item>DENIM</span>
-            <span mat-menu-item>GENȚI</span>
-            <span mat-menu-item>ACCESORII</span>
-            <span mat-menu-item><strong>COPII</strong></span>
-            <span mat-menu-item>FETE</span>
-            <span mat-menu-item>BĂIEȚI</span>
+          <div content fxLayout="raw" fxLayoutAlign="space-around start">
+            <div fxLayout="column" fxFlex="33">
+              <span mat-menu-item><strong>{{"FEMEI" | translate}}</strong></span>
+              <span mat-menu-item>HAINE</span>
+              <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
+              <span mat-menu-item>DENIM</span>
+              <span mat-menu-item>GENȚI</span>
+              <span mat-menu-item>ACCESORII</span>
+            </div>
+            <div fxLayout="column" fxFlex="33">
+              <span mat-menu-item><strong>BĂRBAȚI</strong></span>
+              <span mat-menu-item>HAINE</span>
+              <span mat-menu-item>ÎNCĂLȚĂMINTE</span>
+              <span mat-menu-item>DENIM</span>
+              <span mat-menu-item>GENȚI</span>
+              <span mat-menu-item>ACCESORII</span>
+            </div>
+            <div fxLayout="column">
+              <span mat-menu-item><strong>{{"COPII" | translate}}</strong></span>
+              <span mat-menu-item>{{"FETE" | translate}}</span>
+              <span mat-menu-item>{{"BAIETI" | translate}}</span>
+            </div>
+
           </div>
         </app-auto-open-menu>
 
@@ -106,7 +102,7 @@
         </app-auto-open-menu>
 
         <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
-          COPII
+          {{"COPII" | translate}}
         </button>
         <mat-menu #menuKids="matMenu">
           <button mat-menu-item>FETE</button>
