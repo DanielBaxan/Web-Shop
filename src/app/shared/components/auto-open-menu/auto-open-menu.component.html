@@ -1,18 +1,9 @@
-<button
-  class="menu-btn"
-  [matMenuTriggerFor]="menu"
-  #menuTrigger="matMenuTrigger"
-  (mouseenter)="mouseEnter(menuTrigger)"
-  (mouseleave)="mouseLeave(menuTrigger)"
->
+<button class="menu-btn" [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseenter)="mouseEnter(menuTrigger)"
+  (mouseleave)="mouseLeave(menuTrigger)">
   <ng-content select="[trigger]"></ng-content>
 </button>
 <mat-menu #menu="matMenu" [hasBackdrop]="false">
-  <div
-    class="menu-panel"
-    (mouseenter)="mouseEnter(menuTrigger)"
-    (mouseleave)="mouseLeave(menuTrigger)"
-  >
+  <div class="menu-panel" (mouseenter)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)">
     <ng-content select="[content]" fxFlex></ng-content>
   </div>
 </mat-menu>
