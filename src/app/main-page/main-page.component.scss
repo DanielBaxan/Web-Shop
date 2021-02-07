@@ -1,8 +1,9 @@
 // Desktop
-$carouselHeight:50vh;
+$carouselHeight: 50vh;
 
 @media only screen and (min-width: 1224px) {
   .cardViewtest {
+    display: flex;
     flex-direction: row;
   }
 
@@ -128,6 +129,7 @@ $carouselHeight:50vh;
 // Mobile devices / Tablets
 @media only screen and (max-width: 1224px) {
   .cardViewtest {
+    display: flex;
     flex-direction: column;
   }
 
@@ -274,6 +276,8 @@ img {
 .barred-text {
   display: flex;
   align-items: center;
+  margin-top: 40px;
+  margin-bottom: 1.5em;
 
   span {
     display: flex;
@@ -298,4 +302,96 @@ img {
     height: 2px;
     opacity: 0.1;
   }
+}
+
+.footer-widgets {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px 0 0;
+
+  .footer-row {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1155px;
+    display: flex;
+
+    .footer-column {
+      max-width: 50%;
+      flex-basis: 50%;
+      padding: 0 15px 30px;
+      font-weight: 600;
+      font-family: 'PT Sans', sans-serif;
+
+      .small-divider {
+        height: 3px;
+        max-width: 30px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: 1em 0 1em;
+      }
+
+      .footer-element {
+        padding: 10px 5px 5px 5px;
+        border-top: 1px solid #ececec;
+        display: flex;
+
+        &#first {
+          border-top: none;
+        }
+
+        .footer-element-text {
+          display: flex;
+          flex-direction: column;
+          padding-left: 15px;
+
+          .footer-element-text-name {
+            padding-top: 3px;
+            padding-bottom: 5px;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 120%;
+            color: #334862;
+            font-weight: 500;
+
+            &:hover {
+              color: black;
+            }
+          }
+
+          .footer-element-text-price {
+            font-family: 'PT Sans', sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 1.33;
+          }
+        }
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+}
+
+.footer-main {
+  background-color: #545454;
+  padding: 30px 0 0;
+}
+
+.footer-final {
+  padding: 12px 0 12px;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: black;
+
+  .footer-final-text {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1155px;
+  }
+}
+
+.main-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1155px;
 }
