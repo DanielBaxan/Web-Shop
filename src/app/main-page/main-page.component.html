@@ -252,6 +252,15 @@
     <span>CATEGORII</span>
     <b></b>
   </div>
+  <div class="cardViewtest" fxFlex fxLayoutAlign="space-around center">
+    <ng-container *ngFor="let cat of categories">
+      <app-categories-card
+        [categoryName]="cat.name"
+        [categoryImage]="cat.image"
+        [cardWidth]="'300px'"
+      ></app-categories-card>
+    </ng-container>
+  </div>
   <div class="categories"></div>
   <div class="barred-text">
     <b></b>
