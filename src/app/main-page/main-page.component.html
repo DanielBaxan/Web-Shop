@@ -39,12 +39,7 @@
         <div class="line-divider"></div>
         <div class="basket">
           <div class="basket-text">COȘ / 0,00 MDL</div>
-          <mdb-icon
-            fas
-            class="basket-icon"
-            icon="shopping-bag"
-            size="3x"
-          ></mdb-icon>
+          <mat-icon svgIcon="cart"></mat-icon>
         </div>
       </div>
     </div>
@@ -243,13 +238,16 @@
 
   <div class="gap"></div>
   <div class="welcome">BINE AȚI VENIT LA</div>
-  <div>
+  <div class="barred-text">
     <b></b>
-    <span>MAGAZINUL ONLINE GUESS MOLDOVA</span>
+    <span id="shop-name">
+      <mat-icon svgIcon="shopping-bag"></mat-icon>
+      MAGAZINUL ONLINE GUESS MOLDOVA</span
+    >
     <b></b>
   </div>
-
-  <div>
+  <div class="gap" id="name-category"></div>
+  <div class="barred-text">
     <b></b>
     <span>CATEGORII</span>
     <b></b>
@@ -264,12 +262,12 @@
     </ng-container>
   </div>
   <div class="categories"></div>
-  <div>
+  <div class="barred-text">
     <b></b>
     <span>PRODUSELE GUESS ÎN TREND</span>
     <b></b>
   </div>
-  <div>
+  <div class="barred-text">
     <b></b>
     <span>TOPUL SĂPTĂMÂNII</span>
     <b></b>
