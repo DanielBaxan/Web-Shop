@@ -9,7 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -18,6 +18,7 @@ import { MaterialComponentsModule } from './shared/material.module'
 import { MainPageComponent } from './main-page/main-page.component'
 import { AutoOpenMenuComponent } from './shared/components/auto-open-menu/auto-open-menu.component'
 import { LangButtonComponent } from './shared/lang-button/lang-button.component'
+import { CategoriesCardComponent } from './shared/components/categories-card/categories-card.component'
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
@@ -28,7 +29,8 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     AppComponent,
     MainPageComponent,
     AutoOpenMenuComponent,
-    LangButtonComponent
+    LangButtonComponent,
+    CategoriesCardComponent
   ],
   imports: [
     BrowserModule,

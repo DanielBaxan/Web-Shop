@@ -12,6 +12,29 @@ const instagramUrl = 'https://www.instagram.com/guess_moldova/'
 })
 export class MainPageComponent implements OnInit {
   public siteLang = 'ro'
+  public categories = [
+    {
+      name: 'Femei',
+      image: 'assets/temp/Category-1.jpg',
+      cardWidth: '300px'
+    },
+    {
+      name: 'Bărbați',
+      image: 'assets/temp/Category-2.jpg',
+      cardWidth: '300px'
+    },
+    {
+      name: 'Copii',
+      image: 'assets/temp/Category-3.jpg',
+      cardWidth: '300px'
+    },
+    {
+      name: 'COlecție nouă',
+      image: 'assets/temp/Category-4.jpg',
+      cardWidth: '300px'
+    }
+  ]
+
   constructor(private translateService: TranslateService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translateService.setDefaultLang('ro')

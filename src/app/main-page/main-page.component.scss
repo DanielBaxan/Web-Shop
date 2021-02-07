@@ -1,5 +1,11 @@
 // Desktop
+$carouselHeight:50vh;
+
 @media only screen and (min-width: 1224px) {
+  .cardViewtest {
+    flex-direction: row;
+  }
+
   .header-desktop {
     width: 100%;
 
@@ -122,6 +128,10 @@
 
 // Mobile devices / Tablets
 @media only screen and (max-width: 1224px) {
+  .cardViewtest {
+    flex-direction: column;
+  }
+
   .top-header {
     display: inline-flex;
     align-items: center;
@@ -228,20 +238,20 @@
 }
 
 .carousel {
-  height: 100vh;
+  height: $carouselHeight;
 }
 
 .carousel .carousel-inner {
-  height: 100vh;
+  height: $carouselHeight;
 }
 
 .carousel .carousel-inner .carousel-item,
 .carousel .carousel-inner .active {
-  height: 100vh;
+  height: $carouselHeight;
 }
 
 img {
   &.d-block {
-    height: 70vh;
+    height: $carouselHeight;
   }
 }

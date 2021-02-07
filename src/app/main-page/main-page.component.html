@@ -2,16 +2,27 @@
   <div class="top-header">
     <div class="flex-row container">
       <div class="flex-col hide-for-medium flex-left">
-        <app-lang-button [siteLanguage]="siteLang" (changeLanguage)="changeLanguage($event)"></app-lang-button>
+        <app-lang-button
+          [siteLanguage]="siteLang"
+          (changeLanguage)="changeLanguage($event)"
+        ></app-lang-button>
       </div>
       <div class="flex-col hide-for-medium flex-center">
         <div class="center-text">WINTER SALE -40%</div>
       </div>
       <div class="flex-col hide-for-medium flex-right">
-        <mat-icon class="facebook-icon" svgIcon="facebook" matTooltip="Follow on Facebook"
-          (click)="goToUrl('facebook')"></mat-icon>
-        <mat-icon class="instagram-icon" svgIcon="instagram" matTooltip="Follow on Instagram"
-          (click)="goToUrl('instagram')"></mat-icon>
+        <mat-icon
+          class="facebook-icon"
+          svgIcon="facebook"
+          matTooltip="Follow on Facebook"
+          (click)="goToUrl('facebook')"
+        ></mat-icon>
+        <mat-icon
+          class="instagram-icon"
+          svgIcon="instagram"
+          matTooltip="Follow on Instagram"
+          (click)="goToUrl('instagram')"
+        ></mat-icon>
       </div>
     </div>
   </div>
@@ -28,7 +39,12 @@
         <div class="line-divider"></div>
         <div class="basket">
           <div class="basket-text">COȘ / 0,00 MDL</div>
-          <mdb-icon fas class="basket-icon" icon="shopping-bag" size="3x"></mdb-icon>
+          <mdb-icon
+            fas
+            class="basket-icon"
+            icon="shopping-bag"
+            size="3x"
+          ></mdb-icon>
         </div>
       </div>
     </div>
@@ -43,7 +59,9 @@
           </button>
           <div content fxLayout="raw" fxLayoutAlign="space-around start">
             <div fxLayout="column">
-              <span class="menu-category" mat-menu-item><strong>{{ 'FEMEI' | translate }}</strong></span>
+              <span class="menu-category" mat-menu-item
+                ><strong>{{ 'FEMEI' | translate }}</strong></span
+              >
               <span class="menu-item" mat-menu-item>HAINE</span>
               <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
               <span class="menu-item" mat-menu-item>DENIM</span>
@@ -51,7 +69,9 @@
               <span class="menu-item" mat-menu-item>ACCESORII</span>
             </div>
             <div fxLayout="column">
-              <span class="menu-category" mat-menu-item><strong>BĂRBAȚI</strong></span>
+              <span class="menu-category" mat-menu-item
+                ><strong>BĂRBAȚI</strong></span
+              >
               <span class="menu-item" mat-menu-item>HAINE</span>
               <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
               <span class="menu-item" mat-menu-item>DENIM</span>
@@ -59,13 +79,15 @@
               <span class="menu-item" mat-menu-item>ACCESORII</span>
             </div>
             <div fxLayout="column">
-              <span class="menu-category" mat-menu-item><strong>{{ 'COPII' | translate }}</strong></span>
+              <span class="menu-category" mat-menu-item
+                ><strong>{{ 'COPII' | translate }}</strong></span
+              >
               <span class="menu-item" mat-menu-item>{{
                 'FETE' | translate
-                }}</span>
+              }}</span>
               <span class="menu-item" mat-menu-item>{{
                 'BAIETI' | translate
-                }}</span>
+              }}</span>
             </div>
           </div>
         </app-auto-open-menu>
@@ -122,10 +144,19 @@
     <div class="top-header">
       <div class="center-text">WINTER SALE -40%</div>
       <div class="line-divider"></div>
-      <mat-icon class="facebook-icon" svgIcon="facebook" matTooltip="Follow on Facebook" (click)="goToUrl('facebook')">
+      <mat-icon
+        class="facebook-icon"
+        svgIcon="facebook"
+        matTooltip="Follow on Facebook"
+        (click)="goToUrl('facebook')"
+      >
       </mat-icon>
-      <mat-icon class="instagram-icon" svgIcon="instagram" matTooltip="Follow on Instagram"
-        (click)="goToUrl('instagram')"></mat-icon>
+      <mat-icon
+        class="instagram-icon"
+        svgIcon="instagram"
+        matTooltip="Follow on Instagram"
+        (click)="goToUrl('instagram')"
+      ></mat-icon>
     </div>
     <div class="main-header">
       <div class="flex-row container">
@@ -139,7 +170,12 @@
         </div>
         <div class="flex-col hide-for-medium flex-right right-container">
           <div class="basket">
-            <mdb-icon fas class="basket-icon" icon="shopping-bag" size="3x"></mdb-icon>
+            <mdb-icon
+              fas
+              class="basket-icon"
+              icon="shopping-bag"
+              size="3x"
+            ></mdb-icon>
           </div>
         </div>
       </div>
@@ -162,7 +198,11 @@
       </mdb-carousel-item>
       <mdb-carousel-item>
         <div class="view w-100">
-          <img class="d-block w-100" src="assets/banner/banner2.png" alt="Second slide" />
+          <img
+            class="d-block w-100"
+            src="assets/banner/banner2.png"
+            alt="Second slide"
+          />
           <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
         </div>
         <div class="carousel-caption">
@@ -172,7 +212,11 @@
       </mdb-carousel-item>
       <mdb-carousel-item>
         <div class="view w-100">
-          <img class="d-block w-100" src="assets/banner/banner3.png" alt="Third slide" />
+          <img
+            class="d-block w-100"
+            src="assets/banner/banner3.png"
+            alt="Third slide"
+          />
           <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
         </div>
         <div class="carousel-caption">
@@ -182,7 +226,11 @@
       </mdb-carousel-item>
       <mdb-carousel-item>
         <div class="view w-100">
-          <img class="d-block w-100" src="assets/banner/banner1.png" alt="Third slide" />
+          <img
+            class="d-block w-100"
+            src="assets/banner/banner1.png"
+            alt="Third slide"
+          />
           <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
         </div>
         <div class="carousel-caption">
@@ -200,10 +248,20 @@
     <span>MAGAZINUL ONLINE GUESS MOLDOVA</span>
     <b></b>
   </div>
+
   <div>
     <b></b>
     <span>CATEGORII</span>
     <b></b>
+  </div>
+  <div class="cardViewtest" fxFlex fxLayoutAlign="space-around center">
+    <ng-container *ngFor="let cat of categories">
+      <app-categories-card
+        [categoryName]="cat.name"
+        [categoryImage]="cat.image"
+        [cardWidth]="'300px'"
+      ></app-categories-card>
+    </ng-container>
   </div>
   <div class="categories"></div>
   <div>
