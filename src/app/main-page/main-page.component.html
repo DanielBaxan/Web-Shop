@@ -237,42 +237,29 @@
   </div>
 
   <div class="gap"></div>
-  <div class="main-content">
-    <div class="welcome">BINE AȚI VENIT LA</div>
-    <div class="barred-text">
-      <b></b>
-      <span id="shop-name">
-        <mat-icon svgIcon="shopping-bag"></mat-icon>
-        MAGAZINUL ONLINE GUESS MOLDOVA</span
-      >
-      <b></b>
-    </div>
-    <div class="gap" id="name-category"></div>
-    <div class="barred-text">
-      <b></b>
-      <span>CATEGORII</span>
-      <b></b>
-    </div>
-    <div class="cardViewtest">
-      <ng-container *ngFor="let cat of categories">
-        <app-categories-card
-          [categoryName]="cat.name"
-          [categoryImage]="cat.image"
-          [cardWidth]="'300px'"
-        ></app-categories-card>
-      </ng-container>
-    </div>
-    <div class="categories"></div>
-    <div class="barred-text">
-      <b></b>
-      <span>PRODUSELE GUESS ÎN TREND</span>
-      <b></b>
-    </div>
-    <div class="barred-text">
-      <b></b>
-      <span>TOPUL SĂPTĂMÂNII</span>
-      <b></b>
-    </div>
+  <div class="welcome">BINE AȚI VENIT LA</div>
+  <div class="barred-text">
+    <b></b>
+    <span id="shop-name">
+      <mat-icon svgIcon="shopping-bag"></mat-icon>
+      MAGAZINUL ONLINE GUESS MOLDOVA</span
+    >
+    <b></b>
+  </div>
+  <div class="gap" id="name-category"></div>
+  <div class="barred-text">
+    <b></b>
+    <span>CATEGORII</span>
+    <b></b>
+  </div>
+  <div class="cardViewtest">
+    <ng-container *ngFor="let cat of categories">
+      <app-categories-card
+        [categoryName]="cat.name"
+        [categoryImage]="cat.imageSrc"
+        [cardWidth]="'300px'"
+      ></app-categories-card>
+    </ng-container>
   </div>
   <div class="footer-widgets">
     <div class="footer-row">

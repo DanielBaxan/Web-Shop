@@ -1,6 +1,10 @@
 // Desktop
 $carouselHeight: 50vh;
 
+.cardViewtest {
+  display: flex;
+}
+
 @media only screen and (min-width: 1224px) {
   .cardViewtest {
     display: flex;
