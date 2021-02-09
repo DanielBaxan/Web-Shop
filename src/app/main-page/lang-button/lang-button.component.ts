@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
-import { Lang, languageList } from '../constants'
+import { Lang, languageList } from '../../shared/constants'
 
 @Component({
   selector: 'app-lang-button',

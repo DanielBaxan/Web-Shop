@@ -1,0 +1,49 @@
+.footer-nav {
+  background-color: #545454;
+  padding: 30px 0 0;
+
+  .small-divider {
+    height: 3px;
+    max-width: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 1em 0 1em;
+  }
+
+  &__row {
+    max-width: 1155px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+
+    &__column {
+      max-width: 25%;
+      flex-basis: 25%;
+      padding: 0 15px 30px;
+      color: #f1f1f1;
+      font-family: 'PT Sans', sans-serif;
+
+      &__title {
+        font-size: 1em;
+        font-weight: 600;
+        color: #f1f1f1;
+      }
+
+      &__item {
+        border-top: 1px solid #ececec;
+        border-color: rgba(255, 255, 255, 0.08);
+        line-height: 1.6;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        &#first {
+          border-top: none;
+        }
+      }
+
+      mat-form-field {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.09);
+      }
+    }
+  }
+}

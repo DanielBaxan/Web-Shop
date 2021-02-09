@@ -5,8 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 const icons = ['instagram', 'facebook', 'cart', 'shopping-bag'] as const
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {
   title = 'Web-Shop'
