@@ -1,0 +1,87 @@
+<div class="nav-header">
+  <div class="flex-row container">
+    <div class="flex-col hide-for-medium flex-left">
+      <app-auto-open-menu>
+        <button trigger mat-button>
+          {{ 'Colectii noi' | translate }}
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <div content fxLayout="raw" fxLayoutAlign="space-around start">
+          <div fxLayout="column">
+            <span class="menu-category" mat-menu-item
+              ><strong>{{ 'FEMEI' | translate }}</strong></span
+            >
+            <span class="menu-item" mat-menu-item>HAINE</span>
+            <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
+            <span class="menu-item" mat-menu-item>DENIM</span>
+            <span class="menu-item" mat-menu-item>GENȚI</span>
+            <span class="menu-item" mat-menu-item>ACCESORII</span>
+          </div>
+          <div fxLayout="column">
+            <span class="menu-category" mat-menu-item
+              ><strong>BĂRBAȚI</strong></span
+            >
+            <span class="menu-item" mat-menu-item>HAINE</span>
+            <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
+            <span class="menu-item" mat-menu-item>DENIM</span>
+            <span class="menu-item" mat-menu-item>GENȚI</span>
+            <span class="menu-item" mat-menu-item>ACCESORII</span>
+          </div>
+          <div fxLayout="column">
+            <span class="menu-category" mat-menu-item
+              ><strong>{{ 'COPII' | translate }}</strong></span
+            >
+            <span class="menu-item" mat-menu-item>{{
+              'FETE' | translate
+            }}</span>
+            <span class="menu-item" mat-menu-item>{{
+              'BAIETI' | translate
+            }}</span>
+          </div>
+        </div>
+      </app-auto-open-menu>
+
+      <app-auto-open-menu>
+        <button trigger mat-button>
+          {{ 'FEMEI' | translate }} <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <div content>
+          <span mat-menu-item>TEST1</span>
+          <span mat-menu-item>TEST2</span>
+        </div>
+      </app-auto-open-menu>
+
+      <app-auto-open-menu>
+        <button trigger mat-button>
+          BĂRBAȚI <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <div content>
+          <span mat-menu-item>TEST1</span>
+          <span mat-menu-item>TEST2</span>
+        </div>
+      </app-auto-open-menu>
+
+      <app-auto-open-menu>
+        <button trigger mat-button>
+          MARCIANO <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <div content>
+          <span mat-menu-item>{{ 'FEMEI' | translate }}</span>
+          <span mat-menu-item>BĂRBAȚI</span>
+        </div>
+      </app-auto-open-menu>
+
+      <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
+        {{ 'COPII' | translate }}
+      </button>
+      <mat-menu #menuKids="matMenu">
+        <button mat-menu-item>FETE</button>
+        <button mat-menu-item>BĂIEȚI</button>
+      </mat-menu>
+    </div>
+    <div class="search-bar">
+      <input mat-input placeholder="Caută..." />
+      <mat-icon id="search-icon" color="accent">search</mat-icon>
+    </div>
+  </div>
+</div>

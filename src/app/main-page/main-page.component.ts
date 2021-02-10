@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { TranslateService } from '@ngx-translate/core'
-import { environment } from '../../environments/environment'
 import { MainPageService } from './main-page.service'
-
-const facebookUrl = 'https://www.facebook.com/denimisourworld/'
-const instagramUrl = 'https://www.instagram.com/guess_moldova/'
 
 export interface Category {
   name: string
@@ -16,7 +11,6 @@ export interface Category {
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  public siteLang = 'ro'
   // public categories = [
   //   {
   //     name: 'Femei',
@@ -41,21 +35,7 @@ export class MainPageComponent implements OnInit {
   // ]
 
   public categories: Array<Category> = []
-  constructor(
-    private translateService: TranslateService,
-    private mainPageService: MainPageService
-  ) {
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translateService.setDefaultLang('ro')
-
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translateService.use(environment.defaultLanguage || 'ro')
-  }
-
-  changeLanguage(ev: string): void {
-    this.siteLang = ev
-    this.translateService.use(ev)
-  }
+  constructor(private mainPageService: MainPageService) {}
 
   ngOnInit(): void {
     this.mainPageService.getApi('categories/getAll').subscribe(data => {
@@ -67,18 +47,5 @@ export class MainPageComponent implements OnInit {
         this.categories.push(cat)
       })
     })
-  }
-
-  goToUrl(website: string): void {
-    switch (website) {
-      case 'facebook': {
-        window.open(facebookUrl, '_blank')
-        break
-      }
-      case 'instagram': {
-        window.open(instagramUrl, '_blank')
-        break
-      }
-    }
   }
 }
