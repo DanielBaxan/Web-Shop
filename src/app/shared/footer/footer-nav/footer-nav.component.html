@@ -3,26 +3,80 @@
     <div class="footer-nav__row__column">
       <div class="footer-nav__row__column__title">INFORMAȚII GENERALE:</div>
       <div class="small-divider"></div>
-      <div class="footer-nav__row__column__item" id="first">Despre Noi</div>
-      <div class="footer-nav__row__column__item">Contacte</div>
-      <div class="footer-nav__row__column__item">Termeni și Condiții</div>
+      <div
+        class="footer-nav__row__column__item"
+        id="first"
+        [routerLink]="['/about-us']"
+      >
+        Despre Noi
+      </div>
+      <div class="footer-nav__row__column__item" [routerLink]="['/contact']">
+        Contacte
+      </div>
+      <div
+        class="footer-nav__row__column__item"
+        [routerLink]="['/privacy-policy']"
+      >
+        Termeni și Condiții
+      </div>
     </div>
     <div class="footer-nav__row__column">
       <div class="footer-nav__row__column__title">INFORMAȚII UTILE:</div>
       <div class="small-divider"></div>
-      <div class="footer-nav__row__column__item" id="first">Cum comand</div>
-      <div class="footer-nav__row__column__item">Avantajele Înregistrării</div>
-      <div class="footer-nav__row__column__item">Informații Utile</div>
-      <div class="footer-nav__row__column__item">Livrare și Retur</div>
-      <div class="footer-nav__row__column__item">Întrebări Frecvente - FAQ</div>
-      <div class="footer-nav__row__column__item">Ghid Mărimi</div>
+      <div
+        class="footer-nav__row__column__item"
+        id="first"
+        [routerLink]="['/how-to-order']"
+      >
+        Cum comand
+      </div>
+      <div
+        class="footer-nav__row__column__item"
+        [routerLink]="['/register-benefits']"
+      >
+        Avantajele Înregistrării
+      </div>
+      <div
+        class="footer-nav__row__column__item"
+        [routerLink]="['/useful-info']"
+      >
+        Informații Utile
+      </div>
+      <div
+        class="footer-nav__row__column__item"
+        [routerLink]="['/delivery-and-cancellation']"
+      >
+        Livrare și Retur
+      </div>
+      <div class="footer-nav__row__column__item" [routerLink]="['/faq']">
+        Întrebări Frecvente - FAQ
+      </div>
+      <div class="footer-nav__row__column__item" [routerLink]="['/size-guide']">
+        Ghid Mărimi
+      </div>
     </div>
     <div class="footer-nav__row__column">
       <div class="footer-nav__row__column__title">CONTUL ÎN MAGAZIN:</div>
       <div class="small-divider"></div>
-      <div class="footer-nav__row__column__item" id="first">Contul meu</div>
-      <div class="footer-nav__row__column__item">Comenzile mele</div>
-      <div class="footer-nav__row__column__item">Wishlist</div>
+      <div
+        class="footer-nav__row__column__item"
+        id="first"
+        [routerLink]="['/my-account']"
+      >
+        Contul meu
+      </div>
+      <div
+        class="footer-nav__row__column__item"
+        [routerLink]="['/my-account/track-order']"
+      >
+        Comenzile mele
+      </div>
+      <div
+        class="footer-nav__row__column__item"
+        [routerLink]="['/my-account/wishlist']"
+      >
+        Wishlist
+      </div>
     </div>
     <div class="footer-nav__row__column">
       <div class="footer-nav__row__column__title">ABONARE LA NEWSLETTER:</div>
