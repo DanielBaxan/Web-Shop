@@ -1,24 +1,17 @@
 import { NgModule } from '@angular/core'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
 import { FlexLayoutModule } from '@angular/flex-layout'
-
 import { MaterialComponentsModule } from '../shared/material.module'
-
 import { MainPageComponent } from './main-page.component'
-import { AutoOpenMenuComponent } from './auto-open-menu/auto-open-menu.component'
-import { LangButtonComponent } from './lang-button/lang-button.component'
 import { CategoriesCardComponent } from './categories-card/categories-card.component'
 import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
 import { FooterModule } from '../shared/footer/footer.module'
+import { HeaderModule } from '../shared/header/header.module';
+import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
 
 @NgModule({
-  declarations: [
-    MainPageComponent,
-    AutoOpenMenuComponent,
-    LangButtonComponent,
-    CategoriesCardComponent
-  ],
+  declarations: [MainPageComponent, CategoriesCardComponent, ScrollBtnComponent],
   imports: [
     MaterialComponentsModule,
     FlexLayoutModule,
@@ -30,7 +23,8 @@ import { FooterModule } from '../shared/footer/footer.module'
     ]),
     MDBBootstrapModule.forRoot(),
     SharedModule,
-    FooterModule
+    FooterModule,
+    HeaderModule
   ]
 })
 export class MainPageModule {}

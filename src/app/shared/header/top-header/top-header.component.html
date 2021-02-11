@@ -1,0 +1,27 @@
+<div class="top-header">
+  <div class="flex-row container">
+    <div class="flex-col hide-for-medium flex-left">
+      <app-lang-button
+        [siteLanguage]="siteLang"
+        (changeLanguage)="changeLanguage($event)"
+      ></app-lang-button>
+    </div>
+    <div class="flex-col hide-for-medium flex-center">
+      <div class="center-text">WINTER SALE -40%</div>
+    </div>
+    <div class="flex-col hide-for-medium flex-right">
+      <mat-icon
+        class="facebook-icon"
+        svgIcon="facebook"
+        matTooltip="Follow on Facebook"
+        (click)="goToUrl('facebook')"
+      ></mat-icon>
+      <mat-icon
+        class="instagram-icon"
+        svgIcon="instagram"
+        matTooltip="Follow on Instagram"
+        (click)="goToUrl('instagram')"
+      ></mat-icon>
+    </div>
+  </div>
+</div>

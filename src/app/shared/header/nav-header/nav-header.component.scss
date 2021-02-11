@@ -1,0 +1,28 @@
+.nav-header {
+  background-color: black;
+  min-height: 43px;
+  display: flex;
+  justify-content: space-between;
+
+  .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  mat-button {
+    padding-right: 0;
+  }
+
+  mat-icon {
+    opacity: 0.6;
+    color: white;
+    font-size: 18px;
+  }
+
+  #search-icon {
+    padding-left: 5px;
+    font-size: 22px;
+    opacity: 1;
+  }
+}
