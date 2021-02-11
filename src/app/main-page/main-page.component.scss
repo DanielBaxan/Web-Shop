@@ -17,7 +17,7 @@ $carouselHeight: 50vh;
 }
 
 // Mobile devices / Tablets
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 600px) {
   .cardViewtest {
     display: flex;
     flex-direction: column;

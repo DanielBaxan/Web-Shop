@@ -9,12 +9,14 @@ import { SharedModule } from '../shared/shared.module'
 import { FooterModule } from '../shared/footer/footer.module'
 import { ItemSmallCardComponent } from '../shared/components/item-smallcard/item-smallcard.component'
 import { HeaderModule } from '../shared/header/header.module'
+import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
 
 @NgModule({
   declarations: [
     MainPageComponent,
     CategoriesCardComponent,
-    ItemSmallCardComponent
+    ItemSmallCardComponent,
+    ScrollBtnComponent
   ],
   imports: [
     MaterialComponentsModule,

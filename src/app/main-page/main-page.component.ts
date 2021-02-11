@@ -38,6 +38,30 @@ export class MainPageComponent implements OnInit {
       size: 11,
       color: 'Yellow',
       imageSrc: 'assets/temp/tempItemsIMG/image3.jpg'
+    },
+    {
+      id: '4',
+      name: 'Test',
+      price: 55.12,
+      size: 33,
+      color: 'green',
+      imageSrc: 'assets/temp/tempItemsIMG/image1.jpg'
+    },
+    {
+      id: '5',
+      name: 'Best',
+      price: 550,
+      size: 13,
+      color: 'gri',
+      imageSrc: 'assets/temp/tempItemsIMG/image2.jpg'
+    },
+    {
+      id: '6',
+      name: 'rest-mode',
+      price: 0.12,
+      size: 11,
+      color: 'Yellow',
+      imageSrc: 'assets/temp/tempItemsIMG/image3.jpg'
     }
   ]
 

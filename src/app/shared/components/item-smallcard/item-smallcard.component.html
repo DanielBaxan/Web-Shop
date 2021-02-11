@@ -25,7 +25,11 @@
       <span> Quick View</span>
     </div>
   </div>
-  <div fxLayout="column" class="preview-text">
+  <div
+    fxLayout="column"
+    class="preview-text"
+    (click)="onSomethingClick($event, item.id, imgPart.text)"
+  >
     <b>
       <span> {{ item.name }} </span>
     </b>

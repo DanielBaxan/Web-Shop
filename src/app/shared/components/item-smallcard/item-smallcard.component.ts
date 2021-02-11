@@ -9,7 +9,8 @@ export enum ClickEventPart {
   heart = 'heart',
   travel = 'travel',
   image = 'image',
-  quickView = 'quickView'
+  quickView = 'quickView',
+  text = 'text'
 }
 @Component({
   selector: 'app-item-smallcard',
