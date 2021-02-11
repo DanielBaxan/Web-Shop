@@ -130,11 +130,24 @@
     </ng-container>
   </div>
   <div class="gap" id="name-category"></div>
-  <div class="barred-text">
-    <b></b>
-    <span>PRODUSELE GUESS ÎN TREND</span>
-    <b></b>
+  <div>
+    <div class="barred-text">
+      <b></b>
+      <span>PRODUSELE GUESS ÎN TREND</span>
+      <b></b>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="15px">
+      <div *ngFor="let item of testItems">
+        <app-item-smallcard
+          [wd]="150"
+          [ht]="150"
+          [item]="item"
+          (smallCardPressed)="smallCardPressed($event)"
+        ></app-item-smallcard>
+      </div>
+    </div>
   </div>
+
   <div class="gap" id="name-category"></div>
   <div class="barred-text">
     <b></b>

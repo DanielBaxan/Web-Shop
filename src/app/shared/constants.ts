@@ -8,3 +8,12 @@ export const languageList: Array<Lang> = [
   { code: 'ro', label: 'Romanian' },
   { code: 'ru', label: 'Русский' }
 ]
+
+export interface ItemModel {
+  id?: string
+  name?: string
+  size?: number
+  color?: string
+  price?: number
+  imageSrc?: string
+}
