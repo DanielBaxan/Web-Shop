@@ -7,11 +7,15 @@ import { CategoriesCardComponent } from './categories-card/categories-card.compo
 import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
 import { FooterModule } from '../shared/footer/footer.module'
-import { HeaderModule } from '../shared/header/header.module';
+import { HeaderModule } from '../shared/header/header.module'
 import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
 
 @NgModule({
-  declarations: [MainPageComponent, CategoriesCardComponent, ScrollBtnComponent],
+  declarations: [
+    MainPageComponent,
+    CategoriesCardComponent,
+    ScrollBtnComponent
+  ],
   imports: [
     MaterialComponentsModule,
     FlexLayoutModule,
