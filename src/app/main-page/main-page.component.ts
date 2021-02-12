@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { clickEventExport } from '../shared/components/item-smallcard/item-smallcard.component'
+import { ItemModel } from '../shared/constants'
 import { MainPageService } from './main-page.service'
 
 export interface Category {
@@ -11,41 +13,70 @@ export interface Category {
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  // public categories = [
-  //   {
-  //     name: 'Femei',
-  //     image: 'assets/temp/Category-1.jpg',
-  //     cardWidth: '300px'
-  //   },
-  //   {
-  //     name: 'Bărbați',
-  //     image: 'assets/temp/Category-2.jpg',
-  //     cardWidth: '300px'
-  //   },
-  //   {
-  //     name: 'Copii',
-  //     image: 'assets/temp/Category-3.jpg',
-  //     cardWidth: '300px'
-  //   },
-  //   {
-  //     name: 'COlecție nouă',
-  //     image: 'assets/temp/Category-4.jpg',
-  //     cardWidth: '300px'
-  //   }
-  // ]
+  public siteLang = 'ro'
+  public testItems: Array<ItemModel> = [
+    {
+      id: '1',
+      name: 'Test',
+      price: 55.12,
+      size: 33,
+      color: 'green',
+      imageSrc: 'assets/temp/tempItemsIMG/image1.jpg'
+    },
+    {
+      id: '2',
+      name: 'Best',
+      price: 550,
+      size: 13,
+      color: 'gri',
+      imageSrc: 'assets/temp/tempItemsIMG/image2.jpg'
+    },
+    {
+      id: '3',
+      name: 'rest-mode',
+      price: 0.12,
+      size: 11,
+      color: 'Yellow',
+      imageSrc: 'assets/temp/tempItemsIMG/image3.jpg'
+    },
+    {
+      id: '4',
+      name: 'Test',
+      price: 55.12,
+      size: 33,
+      color: 'green',
+      imageSrc: 'assets/temp/tempItemsIMG/image1.jpg'
+    },
+    {
+      id: '5',
+      name: 'Best',
+      price: 550,
+      size: 13,
+      color: 'gri',
+      imageSrc: 'assets/temp/tempItemsIMG/image2.jpg'
+    },
+    {
+      id: '6',
+      name: 'rest-mode',
+      price: 0.12,
+      size: 11,
+      color: 'Yellow',
+      imageSrc: 'assets/temp/tempItemsIMG/image3.jpg'
+    }
+  ]
 
   public categories: Array<Category> = []
   constructor(private mainPageService: MainPageService) {}
 
   ngOnInit(): void {
     this.mainPageService.getApi('categories/getAll').subscribe(data => {
-      console.log(
-        '🚀 ~ file: main-page.component.ts ~ line 57 ~ MainPageComponent ~ this.mainPageService.getApi ~ data',
-        data
-      )
       data.forEach((cat: Category) => {
         this.categories.push(cat)
       })
     })
+  }
+
+  smallCardPressed(itemId: clickEventExport): void {
+    console.log('🚀 ~ selected item ID =', itemId)
   }
 }

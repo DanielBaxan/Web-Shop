@@ -7,6 +7,7 @@ import { CategoriesCardComponent } from './categories-card/categories-card.compo
 import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
 import { FooterModule } from '../shared/footer/footer.module'
+import { ItemSmallCardComponent } from '../shared/components/item-smallcard/item-smallcard.component'
 import { HeaderModule } from '../shared/header/header.module'
 import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
 
@@ -14,6 +15,7 @@ import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
   declarations: [
     MainPageComponent,
     CategoriesCardComponent,
+    ItemSmallCardComponent,
     ScrollBtnComponent
   ],
   imports: [

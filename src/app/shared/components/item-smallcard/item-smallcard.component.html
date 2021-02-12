@@ -1,0 +1,38 @@
+<div class="card" [style.width.px]="wd" [style.height]="'auto'">
+  <div
+    class="preview-image"
+    [style.width.px]="wd"
+    [style.height.px]="ht"
+    (click)="onSomethingClick($event, item.id, imgPart.image)"
+  >
+    <img [src]="item.imageSrc" [alt]="item.name" />
+    <div
+      class="preview-heart"
+      (click)="onSomethingClick($event, item.id, imgPart.heart)"
+    >
+      <mat-icon>favorite_border</mat-icon>
+    </div>
+    <div
+      class="preview-box"
+      (click)="onSomethingClick($event, item.id, imgPart.travel)"
+    >
+      <mat-icon>card_travel</mat-icon>
+    </div>
+    <div
+      class="preview-info"
+      (click)="onSomethingClick($event, item.id, imgPart.quickView)"
+    >
+      <span> Quick View</span>
+    </div>
+  </div>
+  <div
+    fxLayout="column"
+    class="preview-text"
+    (click)="onSomethingClick($event, item.id, imgPart.text)"
+  >
+    <b>
+      <span> {{ item.name }} </span>
+    </b>
+    <span>{{ item.price }} (Lei MD)</span>
+  </div>
+</div>
