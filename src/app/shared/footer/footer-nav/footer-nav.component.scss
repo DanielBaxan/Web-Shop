@@ -21,6 +21,8 @@
       padding: 0 15px 30px;
       color: #f1f1f1;
       font-family: 'PT Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
 
       &__title {
         font-size: 1em;
@@ -34,6 +36,11 @@
         line-height: 1.6;
         padding-top: 5px;
         padding-bottom: 5px;
+        color: rgb(240, 240, 240);
+
+        &:hover {
+          color: white;
+        }
 
         &#first {
           border-top: none;

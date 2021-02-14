@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="content">
+  <div class="top-row">
+    <div class="path">PRIMA PAGINĂ / FEMEI</div>
+    <div class="results">
+      Afișez 1-{{ currentMaxResults }} din {{ maxResults }} de rezultate
+      <mat-form-field appearance="fill">
+        <mat-select [(value)]="defaultSort">
+          <mat-option *ngFor="let sort of sortings" [value]="sort">
+            Sortează după {{ sort }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

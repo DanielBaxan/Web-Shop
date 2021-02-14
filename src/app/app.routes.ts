@@ -73,6 +73,11 @@ export const routes: Routes = [
       import('./my-account/my-account.module').then(m => m.MyAccountModule)
   },
   {
+    path: 'catalogue',
+    loadChildren: () =>
+      import('./categories/categories.module').then(m => m.CategoriesModule)
+  },
+  {
     path: '**',
     redirectTo: '/'
   }

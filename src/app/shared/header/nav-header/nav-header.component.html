@@ -8,7 +8,10 @@
         </button>
         <div content fxLayout="raw" fxLayoutAlign="space-around start">
           <div fxLayout="column">
-            <span class="menu-category" mat-menu-item
+            <span
+              class="menu-category"
+              mat-menu-item
+              [routerLink]="['/catalogue']"
               ><strong>{{ 'FEMEI' | translate }}</strong></span
             >
             <span class="menu-item" mat-menu-item>HAINE</span>
