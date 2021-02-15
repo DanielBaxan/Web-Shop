@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router'
 import { HeaderModule } from '../shared/header/header.module'
 import { FooterModule } from '../shared/footer/footer.module'
 import { MaterialComponentsModule } from '../shared/material.module'
+import { FilterComponent } from './filter/filter.component'
+import { NgxSliderModule } from '@angular-slider/ngx-slider'
 
 @NgModule({
-  declarations: [CategoriesComponent],
+  declarations: [CategoriesComponent, FilterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -18,7 +20,8 @@ import { MaterialComponentsModule } from '../shared/material.module'
     ]),
     HeaderModule,
     FooterModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    NgxSliderModule
   ]
 })
 export class CategoriesModule {}
