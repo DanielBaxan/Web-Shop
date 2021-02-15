@@ -15,5 +15,11 @@ export interface ItemModel {
   size?: number
   color?: string
   price?: number
-  imageSrc?: string
+  qty?: number
+  discountedPrice?: number
+  imageSrc?: [string]
+  categoryName?: [string]
+  labels?: [string]
+  sku?: string
+  description?: string
 }

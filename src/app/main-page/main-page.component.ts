@@ -21,7 +21,7 @@ export class MainPageComponent implements OnInit {
       price: 55.12,
       size: 33,
       color: 'green',
-      imageSrc: 'assets/temp/tempItemsIMG/image1.jpg'
+      imageSrc: ['assets/temp/tempItemsIMG/image1.jpg']
     },
     {
       id: '2',
@@ -29,7 +29,7 @@ export class MainPageComponent implements OnInit {
       price: 550,
       size: 13,
       color: 'gri',
-      imageSrc: 'assets/temp/tempItemsIMG/image2.jpg'
+      imageSrc: ['assets/temp/tempItemsIMG/image2.jpg']
     },
     {
       id: '3',
@@ -37,7 +37,7 @@ export class MainPageComponent implements OnInit {
       price: 0.12,
       size: 11,
       color: 'Yellow',
-      imageSrc: 'assets/temp/tempItemsIMG/image3.jpg'
+      imageSrc: ['assets/temp/tempItemsIMG/image3.jpg']
     },
     {
       id: '4',
@@ -45,7 +45,7 @@ export class MainPageComponent implements OnInit {
       price: 55.12,
       size: 33,
       color: 'green',
-      imageSrc: 'assets/temp/tempItemsIMG/image1.jpg'
+      imageSrc: ['assets/temp/tempItemsIMG/image1.jpg']
     },
     {
       id: '5',
@@ -53,7 +53,7 @@ export class MainPageComponent implements OnInit {
       price: 550,
       size: 13,
       color: 'gri',
-      imageSrc: 'assets/temp/tempItemsIMG/image2.jpg'
+      imageSrc: ['assets/temp/tempItemsIMG/image2.jpg']
     },
     {
       id: '6',
@@ -61,7 +61,7 @@ export class MainPageComponent implements OnInit {
       price: 0.12,
       size: 11,
       color: 'Yellow',
-      imageSrc: 'assets/temp/tempItemsIMG/image3.jpg'
+      imageSrc: ['assets/temp/tempItemsIMG/image3.jpg']
     }
   ]
 
