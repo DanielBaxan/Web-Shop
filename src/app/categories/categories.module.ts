@@ -6,10 +6,11 @@ import { HeaderModule } from '../shared/header/header.module'
 import { FooterModule } from '../shared/footer/footer.module'
 import { MaterialComponentsModule } from '../shared/material.module'
 import { FilterComponent } from './filter/filter.component'
-import { NgxSliderModule } from '@angular-slider/ngx-slider'
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { SideNavComponent } from './side-nav/side-nav.component'
 
 @NgModule({
-  declarations: [CategoriesComponent, FilterComponent],
+  declarations: [CategoriesComponent, FilterComponent, SideNavComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
