@@ -5,7 +5,7 @@
     [style.height.px]="ht"
     (click)="onSomethingClick($event, item.id, imgPart.image)"
   >
-    <!-- <img [src]="item.imageSrc[0]" [alt]="item.name" /> -->
+    <img [src]="item.imageSrc ? item.imageSrc[0] : ''" [alt]="item.name" />
     <div
       class="preview-heart"
       (click)="onSomethingClick($event, item.id, imgPart.heart)"

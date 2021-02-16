@@ -14,56 +14,7 @@ export interface Category {
 })
 export class MainPageComponent implements OnInit {
   public siteLang = 'ro'
-  public testItems: Array<ItemModel> = [
-    {
-      id: '1',
-      name: 'Test',
-      price: 55.12,
-      size: 33,
-      color: 'green',
-      imageSrc: ['assets/temp/tempItemsIMG/image1.jpg']
-    },
-    {
-      id: '2',
-      name: 'Best',
-      price: 550,
-      size: 13,
-      color: 'gri',
-      imageSrc: ['assets/temp/tempItemsIMG/image2.jpg']
-    },
-    {
-      id: '3',
-      name: 'rest-mode',
-      price: 0.12,
-      size: 11,
-      color: 'Yellow',
-      imageSrc: ['assets/temp/tempItemsIMG/image3.jpg']
-    },
-    {
-      id: '4',
-      name: 'Test',
-      price: 55.12,
-      size: 33,
-      color: 'green',
-      imageSrc: ['assets/temp/tempItemsIMG/image1.jpg']
-    },
-    {
-      id: '5',
-      name: 'Best',
-      price: 550,
-      size: 13,
-      color: 'gri',
-      imageSrc: ['assets/temp/tempItemsIMG/image2.jpg']
-    },
-    {
-      id: '6',
-      name: 'rest-mode',
-      price: 0.12,
-      size: 11,
-      color: 'Yellow',
-      imageSrc: ['assets/temp/tempItemsIMG/image3.jpg']
-    }
-  ]
+  public testItems: Array<ItemModel> = []
 
   public categories: Array<Category> = []
   constructor(private mainPageService: MainPageService) {}
@@ -73,6 +24,9 @@ export class MainPageComponent implements OnInit {
       data.forEach((cat: Category) => {
         this.categories.push(cat)
       })
+    })
+    this.mainPageService.getApi('items/getAllItems').subscribe(data => {
+      data.forEach((item: ItemModel) => this.testItems.push(item))
     })
   }
 
