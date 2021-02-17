@@ -20,8 +20,15 @@
       line-height: 1.6;
       padding-top: 5px;
       padding-bottom: 5px;
-      color: #334862;
-      text-transform: uppercase;
+
+      &__hidden {
+        padding-left: 15px;
+      }
+
+      & a {
+        color: #334862;
+        text-transform: uppercase;
+      }
 
       &:hover {
         color: #000;
@@ -29,6 +36,10 @@
 
       &#first {
         border-top: none;
+      }
+
+      mat-icon {
+        color: black;
       }
     }
   }

@@ -2,38 +2,41 @@
   <div class="nav__column__title">Navighează Categorii:</div>
   <div class="small-divider"></div>
   <div *ngFor="let item of categories">
-    <a class="nav__column__item" [routerLink]="['/catalogue']">
-      {{ item.mainCategory }}
+    <div class="nav__column__item">
+      <a [routerLink]="['/catalogue', item.mainCategory]">
+        {{ item.mainCategory }}
+      </a>
       <mat-icon
         *ngIf="item.categories !== undefined"
         (click)="item.hidden = !item.hidden"
         >keyboard_arrow_down</mat-icon
       >
       <div *ngFor="let category of item.categories">
-        <a
-          *ngIf="!item.hidden"
-          class="nav__column__item"
-          [routerLink]="['/catalogue']"
-          style="padding-left: 15px"
-        >
-          {{ category.category }}
+        <div *ngIf="!item.hidden" class="nav__column__item__hidden">
+          <a
+            [routerLink]="['/catalogue', item.mainCategory, category.category]"
+            >{{ category.category }}</a
+          >
           <mat-icon
             *ngIf="category.subCategories !== undefined"
             (click)="category.hidden = !category.hidden"
             >keyboard_arrow_down</mat-icon
           >
           <div *ngFor="let subCategory of category.subCategories">
-            <a
-              *ngIf="!category.hidden"
-              class="nav__column__item"
-              [routerLink]="['/catalogue']"
-              style="padding-left: 30px"
-            >
-              {{ subCategory }}
-            </a>
+            <div *ngIf="!category.hidden" class="nav__column__item__hidden">
+              <a
+                [routerLink]="[
+                  '/catalogue',
+                  item.mainCategory,
+                  category.category,
+                  subCategory
+                ]"
+                >{{ subCategory }}</a
+              >
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-    </a>
+    </div>
   </div>
 </div>

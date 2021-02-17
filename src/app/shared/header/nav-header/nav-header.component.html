@@ -2,7 +2,7 @@
   <div class="flex-row container">
     <div class="flex-col hide-for-medium flex-left">
       <app-auto-open-menu>
-        <button trigger mat-button>
+        <button trigger mat-button [routerLink]="['/catalogue/new-arrivals']">
           {{ 'Colectii noi' | translate }}
           <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
@@ -11,17 +11,25 @@
             <span
               class="menu-category"
               mat-menu-item
-              [routerLink]="['/catalogue']"
+              [routerLink]="['/catalogue/new-arrivals/women']"
               ><strong>{{ 'FEMEI' | translate }}</strong></span
             >
-            <span class="menu-item" mat-menu-item>HAINE</span>
+            <span
+              class="menu-item"
+              mat-menu-item
+              [routerLink]="['/catalogue/new-arrivals/women/clothes']"
+              >HAINE</span
+            >
             <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
             <span class="menu-item" mat-menu-item>DENIM</span>
             <span class="menu-item" mat-menu-item>GENȚI</span>
             <span class="menu-item" mat-menu-item>ACCESORII</span>
           </div>
           <div fxLayout="column">
-            <span class="menu-category" mat-menu-item
+            <span
+              class="menu-category"
+              mat-menu-item
+              [routerLink]="['/catalogue/new-arrivals/men']"
               ><strong>BĂRBAȚI</strong></span
             >
             <span class="menu-item" mat-menu-item>HAINE</span>
