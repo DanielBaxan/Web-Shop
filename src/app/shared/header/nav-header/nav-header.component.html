@@ -6,89 +6,150 @@
           {{ 'Colectii noi' | translate }}
           <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
-        <div content fxLayout="raw" fxLayoutAlign="space-around start">
+        <div content>
           <div fxLayout="column">
             <span
               class="menu-category"
               mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/women']"
+              [routerLink]="['/catalogue/new-arrivals/new-arrivals-femei']"
               ><strong>{{ 'FEMEI' | translate }}</strong></span
             >
             <span
               class="menu-item"
               mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/women/clothes']"
-              >HAINE</span
+              *ngFor="let item of newArrivalsSubCategories"
+              [routerLink]="[
+                '/catalogue/new-arrivals/new-arrivals-femei',
+                item
+              ]"
+              >{{ item | translate }}</span
             >
-            <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
-            <span class="menu-item" mat-menu-item>DENIM</span>
-            <span class="menu-item" mat-menu-item>GENȚI</span>
-            <span class="menu-item" mat-menu-item>ACCESORII</span>
           </div>
           <div fxLayout="column">
             <span
               class="menu-category"
               mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/men']"
+              [routerLink]="['/catalogue/new-arrivals/new-arrivals-bărbați']"
               ><strong>BĂRBAȚI</strong></span
             >
-            <span class="menu-item" mat-menu-item>HAINE</span>
-            <span class="menu-item" mat-menu-item>ÎNCĂLȚĂMINTE</span>
-            <span class="menu-item" mat-menu-item>DENIM</span>
-            <span class="menu-item" mat-menu-item>GENȚI</span>
-            <span class="menu-item" mat-menu-item>ACCESORII</span>
+            <span
+              class="menu-item"
+              mat-menu-item
+              *ngFor="let item of newArrivalsSubCategories"
+              [routerLink]="[
+                '/catalogue/new-arrivals/new-arrivals-bărbați',
+                item
+              ]"
+              >{{ item }}</span
+            >
           </div>
           <div fxLayout="column">
-            <span class="menu-category" mat-menu-item
+            <span
+              class="menu-category"
+              mat-menu-item
+              [routerLink]="['/catalogue/new-arrivals/new-arrivals-băieți']"
               ><strong>{{ 'COPII' | translate }}</strong></span
             >
-            <span class="menu-item" mat-menu-item>{{
-              'FETE' | translate
-            }}</span>
-            <span class="menu-item" mat-menu-item>{{
-              'BAIETI' | translate
-            }}</span>
+            <span
+              class="menu-item"
+              mat-menu-item
+              [routerLink]="['/catalogue/new-arrivals/new-arrivals-fete']"
+              >{{ 'FETE' | translate }}</span
+            >
+            <span
+              class="menu-item"
+              mat-menu-item
+              [routerLink]="['/catalogue/new-arrivals/new-arrivals-băieți']"
+              >{{ 'BAIETI' | translate }}</span
+            >
           </div>
         </div>
       </app-auto-open-menu>
 
       <app-auto-open-menu>
-        <button trigger mat-button>
+        <button trigger mat-button [routerLink]="['/catalogue/femei']">
           {{ 'FEMEI' | translate }} <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <span mat-menu-item>TEST1</span>
-          <span mat-menu-item>TEST2</span>
+          <div fxLayout="column" *ngFor="let item of womenCategories">
+            <span
+              class="menu-category"
+              mat-menu-item
+              [routerLink]="['/catalogue/femei', item.category]"
+              ><strong>{{ item.category }}</strong></span
+            >
+            <span
+              class="menu-item"
+              mat-menu-item
+              *ngFor="let subCat of item.subCategories"
+              [routerLink]="['/catalogue/femei', item.category, subCat]"
+              >{{ subCat }}</span
+            >
+          </div>
         </div>
       </app-auto-open-menu>
 
       <app-auto-open-menu>
-        <button trigger mat-button>
+        <button trigger mat-button [routerLink]="['/catalogue/bărbați']">
           BĂRBAȚI <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <span mat-menu-item>TEST1</span>
-          <span mat-menu-item>TEST2</span>
+          <div fxLayout="column" *ngFor="let item of menCategories">
+            <span
+              class="menu-category"
+              mat-menu-item
+              [routerLink]="['/catalogue/bărbați', item.category]"
+              ><strong>{{ item.category }}</strong></span
+            >
+            <span
+              class="menu-item"
+              mat-menu-item
+              *ngFor="let subCat of item.subCategories"
+              [routerLink]="['/catalogue/bărbați', item.category, subCat]"
+              >{{ subCat }}</span
+            >
+          </div>
         </div>
       </app-auto-open-menu>
 
       <app-auto-open-menu>
-        <button trigger mat-button>
+        <button trigger mat-button [routerLink]="['/catalogue/marciano']">
           MARCIANO <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <span mat-menu-item>{{ 'FEMEI' | translate }}</span>
-          <span mat-menu-item>BĂRBAȚI</span>
+          <span mat-menu-item [routerLink]="['/catalogue/marciano/femei']">{{
+            'FEMEI' | translate
+          }}</span>
+          <span mat-menu-item [routerLink]="['/catalogue/marciano/bărbați']"
+            >BĂRBAȚI</span
+          >
         </div>
       </app-auto-open-menu>
 
-      <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
+      <app-auto-open-menu>
+        <button trigger mat-button [routerLink]="['/catalogue/copii']">
+          {{ 'COPII' | translate }} <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <div content>
+          <span mat-menu-item [routerLink]="['/catalogue/copii/fete']">{{
+            'FETE' | translate
+          }}</span>
+          <span mat-menu-item [routerLink]="['/catalogue/copii/băieți']"
+            >BĂIEȚI</span
+          >
+          <span mat-menu-item [routerLink]="['/catalogue/copii/unisex']"
+            >UNISEX</span
+          >
+        </div>
+      </app-auto-open-menu>
+
+      <!-- <button mat-button [matMenuTriggerFor]="menuKids" color="accent">
         {{ 'COPII' | translate }}
       </button>
       <mat-menu #menuKids="matMenu">
         <button mat-menu-item>FETE</button>
         <button mat-menu-item>BĂIEȚI</button>
-      </mat-menu>
+      </mat-menu> -->
     </div>
     <div class="search-bar">
       <input mat-input placeholder="Caută..." />
