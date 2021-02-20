@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
+import { Subscription } from 'rxjs'
 
 const sortingOptions = [
   'popularitate',
@@ -19,11 +20,15 @@ export class CategoriesComponent implements OnDestroy {
   currentMaxResults = 12
   sortings = sortingOptions
   path = ''
-  navigationSubscription
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  navigation$
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private activatedRoute$: Subscription
+  ) {
     // subscribe to the router events. Store the subscription so we can
     // unsubscribe later.
-    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+    this.navigation$ = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
       if (e instanceof NavigationEnd) {
         this.resetData()
@@ -32,14 +37,17 @@ export class CategoriesComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.navigationSubscription) {
-      this.navigationSubscription.unsubscribe()
+    if (this.navigation$) {
+      this.navigation$.unsubscribe()
+    }
+    if (this.activatedRoute$) {
+      this.activatedRoute$.unsubscribe()
     }
   }
 
   resetData() {
     this.path = 'prima pagină'
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute$ = this.activatedRoute.params.subscribe(params => {
       let mainCategory = params['mainCategory']
       let category = params['category']
       let subCategory = params['subCategory']
