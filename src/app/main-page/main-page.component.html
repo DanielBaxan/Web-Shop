@@ -104,55 +104,62 @@
     </mdb-carousel>
   </div>
 
-  <div class="gap"></div>
-  <div class="welcome">BINE AȚI VENIT LA</div>
-  <div class="barred-text">
-    <b></b>
-    <span id="shop-name">
-      <mat-icon svgIcon="shopping-bag"></mat-icon>
-      MAGAZINUL ONLINE GUESS MOLDOVA</span
-    >
-    <b></b>
-  </div>
-  <div class="gap" id="name-category"></div>
-  <div class="barred-text">
-    <b></b>
-    <span>CATEGORII</span>
-    <b></b>
-  </div>
-  <div class="cardViewtest" fxLayoutGap="20px">
-    <ng-container *ngFor="let cat of categories">
-      <app-categories-card
-        [categoryName]="cat.name"
-        [categoryImage]="cat.imageSrc"
-        [cardWidth]="'300px'"
-      ></app-categories-card>
-    </ng-container>
-  </div>
-  <div class="gap" id="name-category"></div>
-  <div>
+  <div class="content">
+    <div class="gap"></div>
+    <div class="welcome">BINE AȚI VENIT LA</div>
     <div class="barred-text">
       <b></b>
-      <span>PRODUSELE GUESS ÎN TREND</span>
+      <span id="shop-name">
+        <mat-icon svgIcon="shopping-bag"></mat-icon>
+        MAGAZINUL ONLINE GUESS MOLDOVA</span
+      >
       <b></b>
     </div>
-    <div fxLayout="row wrap" fxLayoutGap="15px">
-      <div *ngFor="let item of testItems">
-        <app-item-smallcard
-          [wd]="150"
-          [ht]="150 * 1.5"
-          [item]="item"
-          (smallCardPressed)="smallCardPressed($event)"
-        ></app-item-smallcard>
+    <div class="gap" id="name-category"></div>
+    <div class="barred-text">
+      <b></b>
+      <span>CATEGORII</span>
+      <b></b>
+    </div>
+    <div class="cardViewtest" fxLayoutGap="20px">
+      <ng-container *ngFor="let cat of categories">
+        <app-categories-card
+          [categoryName]="cat.name"
+          [categoryImage]="cat.imageSrc"
+          [cardWidth]="'300px'"
+        ></app-categories-card>
+      </ng-container>
+    </div>
+    <div class="gap" id="name-category"></div>
+    <div>
+      <div class="barred-text">
+        <b></b>
+        <span>PRODUSELE GUESS ÎN TREND</span>
+        <b></b>
+      </div>
+
+      <!-- <div fxLayout="row wrap" fxLayoutGap="15px">
+        <div *ngFor="let item of testItems">
+          <app-item-smallcard
+            [wd]="150"
+            [ht]="150 * 1.5"
+            [item]="item"
+            (smallCardPressed)="smallCardPressed($event)"
+          ></app-item-smallcard>
+        </div>
+      </div> -->
+
+      <div class="carousel-container">
+        <app-carousel></app-carousel>
       </div>
     </div>
-  </div>
 
-  <div class="gap" id="name-category"></div>
-  <div class="barred-text">
-    <b></b>
-    <span>TOPUL SĂPTĂMÂNII</span>
-    <b></b>
+    <div class="gap" id="name-category"></div>
+    <div class="barred-text">
+      <b></b>
+      <span>TOPUL SĂPTĂMÂNII</span>
+      <b></b>
+    </div>
   </div>
   <app-footer></app-footer>
   <app-scroll-btn></app-scroll-btn>

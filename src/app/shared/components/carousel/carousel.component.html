@@ -1,0 +1,21 @@
+<!-- carousel -->
+<div class="carousel">
+  <button class="control prev" (click)="onPreviousClick()">
+    <span class="arrow left"></span>
+  </button>
+
+  <div class="components">
+    <ng-container *ngFor="let item of shownItems">
+      <app-item-smallcard
+        [wd]="150"
+        [ht]="150 * 1.5"
+        [item]="item"
+        (smallCardPressed)="smallCardPressed($event)"
+      ></app-item-smallcard>
+    </ng-container>
+  </div>
+
+  <button class="control next" (click)="onNextClick()">
+    <span class="arrow right"></span>
+  </button>
+</div>

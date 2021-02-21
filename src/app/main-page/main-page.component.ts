@@ -25,12 +25,12 @@ export class MainPageComponent implements OnInit {
         this.categories.push(cat)
       })
     })
-    this.mainPageService.getApi('items/getAllItems').subscribe(data => {
-      data.forEach((item: ItemModel) => this.testItems.push(item))
-    })
+    // this.mainPageService.getApi('items/getAllItems').subscribe(data => {
+    //   data.forEach((item: ItemModel) => this.testItems.push(item))
+    // })
   }
 
-  smallCardPressed(itemId: clickEventExport): void {
-    console.log('🚀 ~ selected item ID =', itemId)
-  }
+  // smallCardPressed(itemId: clickEventExport): void {
+  //   console.log('🚀 ~ selected item ID =', itemId)
+  // }
 }

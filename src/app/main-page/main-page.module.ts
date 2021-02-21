@@ -10,13 +10,15 @@ import { FooterModule } from '../shared/footer/footer.module'
 import { ItemSmallCardComponent } from '../shared/components/item-smallcard/item-smallcard.component'
 import { HeaderModule } from '../shared/header/header.module'
 import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
+import { CarouselComponent } from '../shared/components/carousel/carousel.component'
 
 @NgModule({
   declarations: [
     MainPageComponent,
     CategoriesCardComponent,
     ItemSmallCardComponent,
-    ScrollBtnComponent
+    ScrollBtnComponent,
+    CarouselComponent
   ],
   imports: [
     MaterialComponentsModule,
