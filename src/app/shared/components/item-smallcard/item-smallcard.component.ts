@@ -38,5 +38,6 @@ export class ItemSmallCardComponent {
     if (itemId !== undefined) {
       this.smallCardPressed.emit({ itemId, part: part })
     }
+    console.log('working', itemId)
   }
 }
