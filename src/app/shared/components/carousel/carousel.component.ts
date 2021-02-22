@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
 import { MainPageService } from 'src/app/main-page/main-page.service'
 import { ItemModel } from '../../constants'
 import { clickEventExport } from '../item-smallcard/item-smallcard.component'
+import { QuickViewComponent } from '../quick-view/quick-view.component'
 
 export const DIFFERENCE = 6
 
@@ -15,7 +17,10 @@ export class CarouselComponent implements OnInit {
   shownItems: Array<ItemModel> = []
   shownItemsIdx = DIFFERENCE
 
-  constructor(private mainPageService: MainPageService) {}
+  constructor(
+    private mainPageService: MainPageService,
+    private matDialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.mainPageService.getApi('items/getAllItems').subscribe(data => {
@@ -26,23 +31,23 @@ export class CarouselComponent implements OnInit {
       }
 
       // TESTING BLOCK
-      this.items.push(data[1])
-      this.items.push(data[3])
-      this.items.push(data[1])
-      this.items.push(data[5])
-      this.items.push(data[4])
-      this.items.push(data[2])
-      this.items.push(data[4])
-      this.items.push(data[5])
-      this.items.push(data[2])
-      this.items.push(data[3])
-      this.items.push(data[0])
-      this.items.push(data[1])
-      this.items.push(data[5])
-      this.items.push(data[0])
-      this.items.push(data[3])
-      this.items.push(data[4])
-      this.items.push(data[5])
+      // this.items.push(data[1])
+      // this.items.push(data[3])
+      // this.items.push(data[1])
+      // this.items.push(data[5])
+      // this.items.push(data[4])
+      // this.items.push(data[2])
+      // this.items.push(data[4])
+      // this.items.push(data[5])
+      // this.items.push(data[2])
+      // this.items.push(data[3])
+      // this.items.push(data[0])
+      // this.items.push(data[1])
+      // this.items.push(data[5])
+      // this.items.push(data[0])
+      // this.items.push(data[3])
+      // this.items.push(data[4])
+      // this.items.push(data[5])
     })
   }
 
@@ -70,6 +75,11 @@ export class CarouselComponent implements OnInit {
   }
 
   smallCardPressed(itemId: clickEventExport): void {
-    console.log('🚀 ~ selected item ID =', itemId)
+    if (['quickView', 'image'].includes(itemId.part.toString())) {
+      const dialogRef = this.matDialog.open(QuickViewComponent, {
+        width: 'auto',
+        data: '' + itemId.itemId
+      })
+    }
   }
 }

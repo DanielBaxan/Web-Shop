@@ -26,7 +26,7 @@ export class ItemSmallCardComponent {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('item in small=', this.item)
+    // console.log('item in small=', this.item)
   }
 
   onSomethingClick(

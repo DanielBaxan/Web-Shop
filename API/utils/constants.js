@@ -3,7 +3,9 @@ const myColors = [ 'red',
   'yellow',
   'black',
   'red',
-  'blue'
+  'blue',
+  'darkblue',
+  'grey'
 ]
 
 

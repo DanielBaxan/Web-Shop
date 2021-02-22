@@ -1,0 +1,16 @@
+<a
+  [ngStyle]="{
+    'text-decoration':
+      discountedPrice === undefined || discountedPrice > 0
+        ? 'line-through'
+        : '',
+    'font-weight': 'light'
+  }"
+  >{{ price | number: '.2' }}</a
+>
+<a
+  *ngIf="discountedPrice === undefined || discountedPrice > 0"
+  style="color: red; font-weight: bold"
+>
+  - {{ discountedPrice | number: '.2' }}</a
+>
