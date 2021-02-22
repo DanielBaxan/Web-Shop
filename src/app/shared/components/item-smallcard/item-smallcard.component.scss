@@ -84,4 +84,16 @@
 .preview-text {
   padding: 0 0 0 .2rem;
   font-size: 1.1rem;
+
+  .item-price {
+    opacity: .6;
+    font-size: 13px;
+  }
+
+  .item-discountedPrice {
+    opacity: .6;
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+  }
 }
