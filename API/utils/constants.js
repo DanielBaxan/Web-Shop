@@ -3,7 +3,8 @@ const myColors = [ 'red',
   'yellow',
   'black',
   'red',
-  'blue'
+  'blue',
+  'grey'
 ]
 
 

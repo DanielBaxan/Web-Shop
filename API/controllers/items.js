@@ -4,7 +4,9 @@ const Items = require( '../models/Items' )
 module.exports.getAllItems = async ( req, res ) => {
   try {
     const items = await Items.find()
-    return res.status( 200 ).json( items )
+    setTimeout( () => {
+      return res.status( 200 ).json( items )
+    }, 2000 )
   } catch ( error ) {
     errorHandler( res, error )
   }
@@ -23,22 +25,21 @@ module.exports.addItem = async ( req, res ) => {
     sku,
     description,
   } = req.body;
-
-  const newItem = new Item( {
-    name,
-    imageSrc,
-    price,
-    discountedPrice,
-    qty,
-    size,
-    color,
-    categoryName: categoryName.split( ',' ).map( el => el = el.trim() ),
-    labels: labels.split( ',' ).map( el => el = el.trim() ),
-    sku,
-    description
-  } );
-
   try {
+    const newItem = new Items( {
+      name,
+      imageSrc: imageSrc.split( ',' ).map( el => el = el.trim() ),
+      price,
+      discountedPrice,
+      qty,
+      size,
+      color,
+      categoryName: categoryName.split( ',' ).map( el => el = el.trim() ),
+      labels: labels.split( ',' ).map( el => el = el.trim() ),
+      sku,
+      description
+    } );
+
     await newItem.save()
     res.status( 200 ).json( {
       message: 'Successfuly saved to BD',
@@ -49,9 +50,8 @@ module.exports.addItem = async ( req, res ) => {
   }
 }
 
-module.exports.getItem = function ( req, res ) {
-  // console.log( "path - http://localhost:5000/api/categories, controller/categoories" );
-  return res.status( 200 ).json( {
-    controller: 'TES GET API ITEM'
-  } )
+module.exports.getItem = async function ( req, res ) {
+  // id is inside req.params.id
+  const item = await Items.findById( req.params.id )
+  return res.status( 200 ).json( item )
 }
