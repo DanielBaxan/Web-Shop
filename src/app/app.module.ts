@@ -15,13 +15,19 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { QuickViewComponent } from './shared/components/quick-view/quick-view.component'
 import { LoaderComponent } from './shared/components/loader/loader.component'
+import { PriceShowComponent } from './shared/components/price-show/price-show.component'
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
 }
 
 @NgModule({
-  declarations: [AppComponent, QuickViewComponent, LoaderComponent],
+  declarations: [
+    AppComponent,
+    QuickViewComponent,
+    PriceShowComponent,
+    LoaderComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

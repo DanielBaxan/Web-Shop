@@ -1,0 +1,38 @@
+<div *ngIf="loading; else loaded">
+  <app-loader></app-loader>
+</div>
+<ng-template #loaded>
+  <div class="quick-view">
+    <div class="image-slider" fxFlex="50">
+      <img
+        [src]="
+          !!item.imageSrc
+            ? item.imageSrc[0]
+            : 'https://www.guess.eu/en-gb/guess/women/apparel/dresses/belted-rib-knit-dress-beige/W0RK42R0SM1-F133.html'
+        "
+        alt="Main item image"
+        class="base-image"
+      />
+    </div>
+    <div class="data-column">
+      <h1>{{ item.name }}</h1>
+      <app-price-show
+        [itemPrice]="item?.price"
+        [discountedPrice]="item?.discountedPrice"
+      ></app-price-show>
+      <br />
+      <a>Marimile - {{ item.size }} </a>
+      <br />
+      <a>Culori - {{ item.color }} </a>
+      <br />
+      <a>In stock - {{ item.qty }} </a>
+      <a>Adauga in cos</a>
+      <br />
+      <a>SKU:{{ item.sku }}</a>
+      <br />
+      <a>Categorii:{{ item.categoryName }}</a>
+      <br />
+      <a>Labels:{{ item.labels }}</a>
+    </div>
+  </div>
+</ng-template>

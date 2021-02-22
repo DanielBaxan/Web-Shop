@@ -1,0 +1,27 @@
+.quick-view {
+  display: flex;
+  // flex-direction: "column";
+  align-items: center;
+  align-content: center;
+  width: 80vh;
+  height: 50vh;
+}
+
+.image-slider {
+  border: 1px solid #000;
+
+  .base-image {
+    width: 420;
+    height: 420px;
+    border-width: 1px solid #c235c2;
+  }
+}
+
+.data-column {
+  align-self: flex-start;
+  border: 1px solid #000;
+
+  h1 {
+    color: rgba(0, 0, 0, 0.801);
+  }
+}

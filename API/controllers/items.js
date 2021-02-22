@@ -26,25 +26,35 @@ module.exports.addItem = async ( req, res ) => {
     description,
   } = req.body;
   try {
-    const newItem = new Items( {
-      name,
-      imageSrc: imageSrc.split( ',' ).map( el => el = el.trim() ),
-      price,
-      discountedPrice,
-      qty,
-      size,
-      color,
-      categoryName: categoryName.split( ',' ).map( el => el = el.trim() ),
-      labels: labels.split( ',' ).map( el => el = el.trim() ),
-      sku,
-      description
-    } );
-
-    await newItem.save()
-    res.status( 200 ).json( {
-      message: 'Successfuly saved to BD',
-      item: newItem
+    const itemsAllFromDB = await Items.find( {
+      "sku": sku
     } )
+    if ( itemsAllFromDB.length > 0 ) {
+      return res.status( 200 ).json( {
+        message: `such SKU already exist in DB, attention wasn't rewrited, please apply UPDATE method !`,
+        item: itemsAllFromDB
+      } )
+
+    } else {
+      const newItem = new Items( {
+        name,
+        imageSrc: imageSrc.split( ',' ).map( el => el = el.trim() ),
+        price,
+        discountedPrice,
+        qty,
+        size,
+        color,
+        categoryName: categoryName.split( ',' ).map( el => el = el.trim() ),
+        labels: labels.split( ',' ).map( el => el = el.trim() ),
+        sku,
+        description
+      } );
+      await newItem.save()
+      return res.status( 200 ).json( {
+        message: 'Successfuly saved to BD',
+        item: newItem
+      } )
+    }
   } catch ( error ) {
     errorHandler( res, error )
   }

@@ -36,12 +36,12 @@ export class MainPageComponent implements OnInit {
     // })
   }
 
-  smallCardPressed(itemId: clickEventExport): void {
-    if (['quickView', 'image'].includes(itemId.part.toString())) {
-      const dialogRef = this.matDialog.open(QuickViewComponent, {
-        width: 'auto',
-        data: '' + itemId.itemId
-      })
-    }
-  }
+  // smallCardPressed(itemId: clickEventExport): void {
+  //   if (['quickView', 'image'].includes(itemId.part.toString())) {
+  //     const dialogRef = this.matDialog.open(QuickViewComponent, {
+  //       width: 'auto',
+  //       data: '' + itemId.itemId
+  //     })
+  //   }
+  // }
 }

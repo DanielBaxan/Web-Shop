@@ -4,6 +4,7 @@ const myColors = [ 'red',
   'black',
   'red',
   'blue',
+  'darkblue',
   'grey'
 ]
 
