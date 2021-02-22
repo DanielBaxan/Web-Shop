@@ -26,6 +26,10 @@ export class CategoriesComponent implements OnDestroy {
   navigation$
   activatedRoute$: Subscription = new Subscription()
   items: Array<ItemModel> = []
+  shownItems: Array<ItemModel> = []
+  shownItemsIdx = 0
+  hideViewMore = false
+  loading = true
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -52,6 +56,11 @@ export class CategoriesComponent implements OnDestroy {
       this.items.push(data[3])
       this.items.push(data[4])
       this.items.push(data[5])
+
+      for (this.shownItemsIdx; this.shownItemsIdx < 6; this.shownItemsIdx++) {
+        this.shownItems.push(this.items[this.shownItemsIdx])
+      }
+      this.loading = false
     })
 
     // subscribe to the router events. Store the subscription so we can
@@ -94,5 +103,13 @@ export class CategoriesComponent implements OnDestroy {
     console.log('🚀 ~ selected item ID =', itemId)
   }
 
-  viewMore() {}
+  viewMore() {
+    if (this.shownItemsIdx === this.items.length - 1) this.hideViewMore = true
+    else {
+      for (let i = 0; i < 6; i++) {
+        this.shownItems.push(this.items[this.shownItemsIdx])
+        this.shownItemsIdx++
+      }
+    }
+  }
 }

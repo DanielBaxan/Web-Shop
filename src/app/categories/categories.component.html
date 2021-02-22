@@ -20,7 +20,7 @@
     </div>
     <div class="column-big">
       <div class="column-big__items">
-        <ng-container *ngFor="let item of items">
+        <ng-container *ngFor="let item of shownItems">
           <app-item-smallcard
             [wd]="225"
             [ht]="200 * 1.5"
@@ -29,7 +29,13 @@
           ></app-item-smallcard>
         </ng-container>
       </div>
-      <button mat-raised-button color="primary" (click)="viewMore()">
+      <button
+        *ngIf="!this.hideViewMore"
+        [disabled]="loading"
+        mat-raised-button
+        color="primary"
+        (click)="viewMore()"
+      >
         Încarcă mai multe
       </button>
     </div>
