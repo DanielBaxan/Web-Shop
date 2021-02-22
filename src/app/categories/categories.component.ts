@@ -21,11 +21,8 @@ export class CategoriesComponent implements OnDestroy {
   sortings = sortingOptions
   path = ''
   navigation$
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private activatedRoute$: Subscription
-  ) {
+  activatedRoute$: Subscription = new Subscription()
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     // subscribe to the router events. Store the subscription so we can
     // unsubscribe later.
     this.navigation$ = this.router.events.subscribe((e: any) => {
