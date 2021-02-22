@@ -13,3 +13,24 @@
     margin-right: auto;
   }
 }
+
+.main {
+  display: flex;
+  flex-direction: row;
+
+  .column-small {
+    flex-basis: 25%;
+  }
+
+  .column-big__items {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+  }
+}

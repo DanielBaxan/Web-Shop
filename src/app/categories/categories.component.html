@@ -13,7 +13,26 @@
       </mat-form-field>
     </div>
   </div>
-  <app-filter></app-filter>
-  <app-side-nav></app-side-nav>
+  <div class="main">
+    <div class="column-small">
+      <app-filter></app-filter>
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="column-big">
+      <div class="column-big__items">
+        <ng-container *ngFor="let item of items">
+          <app-item-smallcard
+            [wd]="225"
+            [ht]="200 * 1.5"
+            [item]="item"
+            (smallCardPressed)="smallCardPressed($event)"
+          ></app-item-smallcard>
+        </ng-container>
+      </div>
+      <button mat-raised-button color="primary" (click)="viewMore()">
+        Încarcă mai multe
+      </button>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

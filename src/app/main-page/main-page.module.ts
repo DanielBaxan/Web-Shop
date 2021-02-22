@@ -16,7 +16,6 @@ import { CarouselComponent } from '../shared/components/carousel/carousel.compon
   declarations: [
     MainPageComponent,
     CategoriesCardComponent,
-    ItemSmallCardComponent,
     ScrollBtnComponent,
     CarouselComponent
   ],

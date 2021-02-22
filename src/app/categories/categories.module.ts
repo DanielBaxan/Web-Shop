@@ -9,6 +9,7 @@ import { FilterComponent } from './filter/filter.component'
 import { NgxSliderModule } from '@angular-slider/ngx-slider'
 import { SideNavComponent } from './side-nav/side-nav.component'
 import { categoriesRoutes } from './categories.routes'
+import { SharedModule } from '../shared/shared.module'
 
 @NgModule({
   declarations: [CategoriesComponent, FilterComponent, SideNavComponent],
@@ -18,7 +19,8 @@ import { categoriesRoutes } from './categories.routes'
     HeaderModule,
     FooterModule,
     MaterialComponentsModule,
-    NgxSliderModule
+    NgxSliderModule,
+    SharedModule
   ]
 })
 export class CategoriesModule {}

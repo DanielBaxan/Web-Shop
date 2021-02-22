@@ -1,6 +1,9 @@
 import { Component, OnDestroy } from '@angular/core'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
 import { Subscription } from 'rxjs'
+import { MainPageService } from '../main-page/main-page.service'
+import { clickEventExport } from '../shared/components/item-smallcard/item-smallcard.component'
+import { ItemModel } from '../shared/constants'
 
 const sortingOptions = [
   'popularitate',
@@ -22,7 +25,35 @@ export class CategoriesComponent implements OnDestroy {
   path = ''
   navigation$
   activatedRoute$: Subscription = new Subscription()
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  items: Array<ItemModel> = []
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private mainPageService: MainPageService
+  ) {
+    this.mainPageService.getApi('items/getAllItems').subscribe(data => {
+      data.forEach((item: ItemModel) => this.items.push(item))
+
+      // TESTING BLOCK
+      this.items.push(data[1])
+      this.items.push(data[3])
+      this.items.push(data[1])
+      this.items.push(data[5])
+      this.items.push(data[4])
+      this.items.push(data[2])
+      this.items.push(data[4])
+      this.items.push(data[5])
+      this.items.push(data[2])
+      this.items.push(data[3])
+      this.items.push(data[0])
+      this.items.push(data[1])
+      this.items.push(data[5])
+      this.items.push(data[0])
+      this.items.push(data[3])
+      this.items.push(data[4])
+      this.items.push(data[5])
+    })
+
     // subscribe to the router events. Store the subscription so we can
     // unsubscribe later.
     this.navigation$ = this.router.events.subscribe((e: any) => {
@@ -58,4 +89,10 @@ export class CategoriesComponent implements OnDestroy {
       }
     })
   }
+
+  smallCardPressed(itemId: clickEventExport): void {
+    console.log('🚀 ~ selected item ID =', itemId)
+  }
+
+  viewMore() {}
 }
