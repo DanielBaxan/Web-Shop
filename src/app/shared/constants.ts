@@ -10,7 +10,7 @@ export const languageList: Array<Lang> = [
 ]
 
 export interface ItemModel {
-  id?: string
+  _id?: string
   name?: string
   size?: string
   color?: string

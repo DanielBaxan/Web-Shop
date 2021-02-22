@@ -20,7 +20,7 @@ export enum ClickEventPart {
 export class ItemSmallCardComponent {
   @Input() wd = 175
   @Input() ht = 175
-  @Input() item: ItemModel = { id: '-1', size: '200' }
+  @Input() item: ItemModel = { _id: '-1', size: '200' }
   @Output() smallCardPressed = new EventEmitter<clickEventExport>()
   public imgPart = ClickEventPart
   constructor() {}
@@ -38,5 +38,6 @@ export class ItemSmallCardComponent {
     if (itemId !== undefined) {
       this.smallCardPressed.emit({ itemId, part: part })
     }
+    console.log('working', itemId)
   }
 }

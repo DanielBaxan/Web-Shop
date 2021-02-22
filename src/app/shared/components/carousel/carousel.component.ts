@@ -3,6 +3,8 @@ import { MainPageService } from 'src/app/main-page/main-page.service'
 import { ItemModel } from '../../constants'
 import { clickEventExport } from '../item-smallcard/item-smallcard.component'
 
+export const DIFFERENCE = 6
+
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -11,7 +13,7 @@ import { clickEventExport } from '../item-smallcard/item-smallcard.component'
 export class CarouselComponent implements OnInit {
   items: Array<ItemModel> = []
   shownItems: Array<ItemModel> = []
-  shownItemsIdx: number = 6
+  shownItemsIdx = DIFFERENCE
 
   constructor(private mainPageService: MainPageService) {}
 
@@ -19,7 +21,7 @@ export class CarouselComponent implements OnInit {
     this.mainPageService.getApi('items/getAllItems').subscribe(data => {
       data.forEach((item: ItemModel) => this.items.push(item))
 
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < DIFFERENCE; i++) {
         this.shownItems.push(this.items[i])
       }
 
@@ -46,22 +48,23 @@ export class CarouselComponent implements OnInit {
 
   // Reset the index to the first item of previous set of items and then adds those
   onPreviousClick() {
-    if (this.shownItems[0] !== this.items[0]) {
-      this.shownItemsIdx -= 12
-      for (let i = 0; i < 6; i++) {
-        this.shownItems[i] = this.items[this.shownItemsIdx]
-        this.shownItemsIdx++
+    for (let i = DIFFERENCE - 1; i >= 0; i--) {
+      if (this.shownItemsIdx === 0) {
+        this.shownItemsIdx = this.items.length - 1
       }
+      this.shownItems[i] = this.items[this.shownItemsIdx]
+      this.shownItemsIdx--
     }
     console.log('previous clicked, new showItems are: ', this.shownItems)
   }
 
   onNextClick() {
-    if (this.shownItems[1] !== this.items[this.items.length - 1]) {
-      for (let i = 0; i < 6; i++) {
-        this.shownItems[i] = this.items[this.shownItemsIdx]
-        this.shownItemsIdx++
+    for (let i = 0; i < DIFFERENCE; i++) {
+      if (this.shownItemsIdx === this.items.length - 1) {
+        this.shownItemsIdx = 0
       }
+      this.shownItems[i] = this.items[this.shownItemsIdx]
+      this.shownItemsIdx++
     }
     console.log('next clicked, new showItems are: ', this.shownItems)
   }
