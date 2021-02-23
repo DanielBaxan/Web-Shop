@@ -33,6 +33,33 @@
     <b>
       <span> {{ item.name }} </span>
     </b>
-    <span>{{ item.price }} (Lei MD)</span>
+    <div
+      fxFlex
+      fxLayout="row"
+      fxLayoutGap="5"
+      fxLayoutAlign="space-around center"
+    >
+      <a
+        class="item-price"
+        [ngStyle]="{
+          'text-decoration':
+            item.discountedPrice !== undefined && item.discountedPrice > 0
+              ? 'line-through'
+              : 'none'
+        }"
+        >{{ item.price | number: '.1' }}</a
+      >
+      <a
+        *ngIf="
+          item.discountedPrice !== undefined && item.discountedPrice > 0;
+          else lei
+        "
+        class="item-discountedPrice"
+        >{{ item.discountedPrice | number: '.1' }} MDL</a
+      >
+      <ng-template #lei>
+        <a class="item-price"> MDL </a>
+      </ng-template>
+    </div>
   </div>
 </div>
