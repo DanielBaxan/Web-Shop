@@ -27,10 +27,32 @@
   }
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.menu-category {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .menu-item {
   text-transform: uppercase;
+  border-top: 1px solid #ececec;
 }
 
 .flex-row {
   display: flex;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }

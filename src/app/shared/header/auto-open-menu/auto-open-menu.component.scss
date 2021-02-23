@@ -7,9 +7,13 @@
 }
 
 .menu-panel {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   margin: 0px;
   padding: 0px;
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: none !important;
 }
 
 .mat-menu {

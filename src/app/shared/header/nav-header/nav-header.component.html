@@ -7,61 +7,65 @@
           <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <div fxLayout="column">
-            <span
-              class="menu-category"
-              mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/new-arrivals-femei']"
-              ><strong>{{ 'FEMEI' | translate }}</strong></span
-            >
-            <span
-              class="menu-item"
-              mat-menu-item
-              *ngFor="let item of newArrivalsSubCategories"
-              [routerLink]="[
-                '/catalogue/new-arrivals/new-arrivals-femei',
-                item
-              ]"
-              >{{ item | translate }}</span
-            >
-          </div>
-          <div fxLayout="column">
-            <span
-              class="menu-category"
-              mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/new-arrivals-bărbați']"
-              ><strong>BĂRBAȚI</strong></span
-            >
-            <span
-              class="menu-item"
-              mat-menu-item
-              *ngFor="let item of newArrivalsSubCategories"
-              [routerLink]="[
-                '/catalogue/new-arrivals/new-arrivals-bărbați',
-                item
-              ]"
-              >{{ item }}</span
-            >
-          </div>
-          <div fxLayout="column">
-            <span
-              class="menu-category"
-              mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/new-arrivals-băieți']"
-              ><strong>{{ 'COPII' | translate }}</strong></span
-            >
-            <span
-              class="menu-item"
-              mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/new-arrivals-fete']"
-              >{{ 'FETE' | translate }}</span
-            >
-            <span
-              class="menu-item"
-              mat-menu-item
-              [routerLink]="['/catalogue/new-arrivals/new-arrivals-băieți']"
-              >{{ 'BAIETI' | translate }}</span
-            >
+          <div class="wrapper">
+            <div class="column">
+              <div
+                class="menu-category"
+                mat-menu-item
+                [routerLink]="['/catalogue/new-arrivals/new-arrivals-femei']"
+              >
+                <strong>{{ 'FEMEI' | translate }}</strong>
+              </div>
+              <div
+                class="menu-item"
+                mat-menu-item
+                *ngFor="let item of newArrivalsSubCategories"
+                [routerLink]="[
+                  '/catalogue/new-arrivals/new-arrivals-femei',
+                  item
+                ]"
+              >
+                {{ item | translate }}
+              </div>
+            </div>
+            <div class="column">
+              <span
+                class="menu-category"
+                mat-menu-item
+                [routerLink]="['/catalogue/new-arrivals/new-arrivals-bărbați']"
+                ><strong>BĂRBAȚI</strong></span
+              >
+              <span
+                class="menu-item"
+                mat-menu-item
+                *ngFor="let item of newArrivalsSubCategories"
+                [routerLink]="[
+                  '/catalogue/new-arrivals/new-arrivals-bărbați',
+                  item
+                ]"
+                >{{ item }}</span
+              >
+            </div>
+            <div class="column">
+              <span
+                class="menu-category"
+                mat-menu-item
+                [routerLink]="['/catalogue/new-arrivals/new-arrivals-băieți']"
+                ><strong>{{ 'COPII' | translate }}</strong></span
+              >
+              <span
+                class="menu-item"
+                mat-menu-item
+                [routerLink]="['/catalogue/new-arrivals/new-arrivals-fete']"
+                >{{ 'FETE' | translate }}</span
+              >
+              <span
+                class="menu-item"
+                mat-menu-item
+                [routerLink]="['/catalogue/new-arrivals/new-arrivals-băieți']"
+                >{{ 'BAIETI' | translate }}</span
+              >
+            </div>
           </div>
         </div>
       </app-auto-open-menu>
@@ -71,20 +75,22 @@
           {{ 'FEMEI' | translate }} <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <div fxLayout="column" *ngFor="let item of womenCategories">
-            <span
-              class="menu-category"
-              mat-menu-item
-              [routerLink]="['/catalogue/femei', item.category]"
-              ><strong>{{ item.category }}</strong></span
-            >
-            <span
-              class="menu-item"
-              mat-menu-item
-              *ngFor="let subCat of item.subCategories"
-              [routerLink]="['/catalogue/femei', item.category, subCat]"
-              >{{ subCat }}</span
-            >
+          <div class="wrapper">
+            <div class="column" *ngFor="let item of womenCategories">
+              <span
+                class="menu-category"
+                mat-menu-item
+                [routerLink]="['/catalogue/femei', item.category]"
+                ><strong>{{ item.category }}</strong></span
+              >
+              <span
+                class="menu-item"
+                mat-menu-item
+                *ngFor="let subCat of item.subCategories"
+                [routerLink]="['/catalogue/femei', item.category, subCat]"
+                >{{ subCat }}</span
+              >
+            </div>
           </div>
         </div>
       </app-auto-open-menu>
@@ -94,20 +100,22 @@
           BĂRBAȚI <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <div fxLayout="column" *ngFor="let item of menCategories">
-            <span
-              class="menu-category"
-              mat-menu-item
-              [routerLink]="['/catalogue/bărbați', item.category]"
-              ><strong>{{ item.category }}</strong></span
-            >
-            <span
-              class="menu-item"
-              mat-menu-item
-              *ngFor="let subCat of item.subCategories"
-              [routerLink]="['/catalogue/bărbați', item.category, subCat]"
-              >{{ subCat }}</span
-            >
+          <div class="wrapper">
+            <div class="column" *ngFor="let item of menCategories">
+              <span
+                class="menu-category"
+                mat-menu-item
+                [routerLink]="['/catalogue/bărbați', item.category]"
+                ><strong>{{ item.category }}</strong></span
+              >
+              <span
+                class="menu-item"
+                mat-menu-item
+                *ngFor="let subCat of item.subCategories"
+                [routerLink]="['/catalogue/bărbați', item.category, subCat]"
+                >{{ subCat }}</span
+              >
+            </div>
           </div>
         </div>
       </app-auto-open-menu>
@@ -117,12 +125,17 @@
           MARCIANO <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <span mat-menu-item [routerLink]="['/catalogue/marciano/femei']">{{
-            'FEMEI' | translate
-          }}</span>
-          <span mat-menu-item [routerLink]="['/catalogue/marciano/bărbați']"
-            >BĂRBAȚI</span
-          >
+          <div class="column">
+            <span mat-menu-item [routerLink]="['/catalogue/marciano/femei']">{{
+              'FEMEI' | translate
+            }}</span>
+            <span
+              class="menu-item"
+              mat-menu-item
+              [routerLink]="['/catalogue/marciano/bărbați']"
+              >BĂRBAȚI</span
+            >
+          </div>
         </div>
       </app-auto-open-menu>
 
@@ -131,15 +144,23 @@
           {{ 'COPII' | translate }} <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
         <div content>
-          <span mat-menu-item [routerLink]="['/catalogue/copii/fete']">{{
-            'FETE' | translate
-          }}</span>
-          <span mat-menu-item [routerLink]="['/catalogue/copii/băieți']"
-            >BĂIEȚI</span
-          >
-          <span mat-menu-item [routerLink]="['/catalogue/copii/unisex']"
-            >UNISEX</span
-          >
+          <div class="column">
+            <span mat-menu-item [routerLink]="['/catalogue/copii/fete']">{{
+              'FETE' | translate
+            }}</span>
+            <span
+              class="menu-item"
+              mat-menu-item
+              [routerLink]="['/catalogue/copii/băieți']"
+              >BĂIEȚI</span
+            >
+            <span
+              class="menu-item"
+              mat-menu-item
+              [routerLink]="['/catalogue/copii/unisex']"
+              >UNISEX</span
+            >
+          </div>
         </div>
       </app-auto-open-menu>
 
