@@ -30,36 +30,30 @@
     class="preview-text"
     (click)="onSomethingClick($event, item._id, imgPart.text)"
   >
+    <div class="name">{{ item.name }}</div>
+    <div
+      fxFlex
+      fxLayout="row"
+      fxLayoutGap="5"
+      fxLayoutAlign="space-around center"
     >
+      <div
+        class="price"
+        [ngStyle]="{
+          'text-decoration':
+            item.discountedPrice !== undefined && item.discountedPrice! > 0
+              ? 'line-through'
+              : 'none'
+        }"
+      >
+        {{ item.price | number: '.1' }} MDL
+      </div>
+      <div
+        *ngIf="item.discountedPrice !== undefined && item.discountedPrice! > 0"
+        class="item-discountedPrice"
+      >
+        {{ item.discountedPrice | number: '.1' }} MDL
+      </div>
+    </div>
   </div>
-  <div class="name">{{ item.name }}</div>
-  <!-- <div
-    class="price"
-    fxFlex
-    fxLayout="row"
-    fxLayoutGap="5"
-    fxLayoutAlign="space-around center"
-  >
-    <a
-      class="item-price"
-      [ngStyle]="{
-        'text-decoration':
-          item.discountedPrice !== undefined && item.discountedPrice > 0
-            ? 'line-through'
-            : 'none'
-      }"
-      >{{ item.price | number: '.1' }}</a
-    >
-    <a
-      *ngIf="
-        item.discountedPrice !== undefined && item.discountedPrice > 0;
-        else lei
-      "
-      class="item-discountedPrice"
-      >{{ item.discountedPrice | number: '.1' }} MDL</a
-    >
-    <ng-template #lei>
-      <a class="item-price"> MDL </a>
-    </ng-template>
-  </div> -->
 </div>
