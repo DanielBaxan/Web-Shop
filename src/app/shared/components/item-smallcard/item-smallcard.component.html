@@ -29,10 +29,7 @@
     fxLayout="column"
     class="preview-text"
     (click)="onSomethingClick($event, item._id, imgPart.text)"
-  >
-    <b>
-      <span> {{ item.name }} </span>
-    </b>
-    <span>{{ item.price }} (Lei MD)</span>
-  </div>
+  ></div>
+  <div class="name">{{ item.name }}</div>
+  <div class="price">{{ item.price }} MDL</div>
 </div>

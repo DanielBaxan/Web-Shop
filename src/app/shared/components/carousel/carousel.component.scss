@@ -16,6 +16,14 @@
   width: 100%;
   overflow: hidden;
   border-radius: 0.5em;
+
+  & .control {
+    visibility: hidden;
+  }
+
+  &:hover .control {
+    visibility: visible;
+  }
 }
 
 .components {
@@ -61,8 +69,8 @@
 /* style the arrows */
 .arrow {
   display: block;
-  border-left: 0.1em solid rgb(240, 96, 96);
-  border-bottom: 0.1em solid rgb(206, 95, 95);
+  border-left: 0.1em solid #111;
+  border-bottom: 0.1em solid #111;
   width: 0.5em;
   height: 0.5em;
 
@@ -72,4 +80,10 @@
   &.right {
     transform: rotate(225deg);
   }
+}
+
+.vertical-line {
+  border-left: 5px solid rgba(36, 36, 36, 0.3);
+  height: 100%;
+  position: relative;
 }

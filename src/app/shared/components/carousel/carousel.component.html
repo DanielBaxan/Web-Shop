@@ -3,6 +3,7 @@
   <button class="control prev" (click)="onPreviousClick()">
     <span class="arrow left"></span>
   </button>
+  <div class="vertical-line"></div>
 
   <div class="components">
     <ng-container *ngFor="let item of shownItems">
@@ -15,6 +16,7 @@
     </ng-container>
   </div>
 
+  <div class="vertical-line"></div>
   <button class="control next" (click)="onNextClick()">
     <span class="arrow right"></span>
   </button>
