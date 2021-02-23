@@ -20,10 +20,14 @@ export enum ClickEventPart {
 export class ItemSmallCardComponent {
   @Input() wd = 175
   @Input() ht = 175
-  @Input() item: ItemModel = { _id: '-1', size: '200' }
+  @Input() item: ItemModel = { _id: '-1', size: '200', discountedPrice: 2 }
   @Output() smallCardPressed = new EventEmitter<clickEventExport>()
   public imgPart = ClickEventPart
-  constructor() {}
+  constructor() {
+    if (this.item.discountedPrice === null) {
+      this.item.discountedPrice === undefined
+    }
+  }
 
   ngOnInit(): void {
     // console.log('item in small=', this.item)

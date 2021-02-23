@@ -21,9 +21,12 @@
         [discountedPrice]="item?.discountedPrice"
       ></app-price-show>
       <br />
-      <a>Marimile - {{ item.size }} </a>
+      <app-size-show
+        [message]="'Marimile'"
+        [sizes]="[item.size || '']"
+      ></app-size-show>
       <br />
-      <a>Culori - {{ item.color }} </a>
+      <app-color-show [message]="'Culorile'"></app-color-show>
       <br />
       <a>In stock - {{ item.qty }} </a>
       <a>Adauga in cos</a>

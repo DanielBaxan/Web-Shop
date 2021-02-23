@@ -7,7 +7,7 @@ import { MaterialComponentsModule } from './material.module'
 
 @NgModule({
   declarations: [ItemSmallCardComponent],
-  imports: [MaterialComponentsModule],
+  imports: [MaterialComponentsModule, CommonModule],
   exports: [CommonModule, TranslateModule, RouterModule, ItemSmallCardComponent]
 })
 export class SharedModule {}
