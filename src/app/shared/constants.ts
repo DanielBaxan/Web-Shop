@@ -11,17 +11,23 @@ export const languageList: Array<Lang> = [
 
 export interface ItemModel {
   _id?: string
+  sku?: string
   name?: string
-  size?: string
-  color?: string
   price?: number
-  qty?: number
   discountedPrice?: number
-  imageSrc?: [string]
   categoryName?: [string]
   labels?: [string]
-  sku?: string
   description?: string
+  modelImagesSrc?: [string]
+}
+
+export interface ItemModelVariation {
+  _id?: string
+  sku?: string
+  size?: string
+  color?: string
+  qty?: number
+  coloredImagesSrc: [string]
 }
 
 export interface MainCategoryInterface {
