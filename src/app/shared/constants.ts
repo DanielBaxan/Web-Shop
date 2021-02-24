@@ -11,6 +11,21 @@ export const languageList: Array<Lang> = [
 
 export interface ItemModel {
   _id?: string
+  name?: string
+  size?: string
+  color?: string
+  price?: number
+  qty?: number
+  discountedPrice?: number
+  imageSrc?: [string]
+  categoryName?: [string]
+  labels?: [string]
+  sku?: string
+  description?: string
+}
+
+export interface ItemModelNew {
+  _id?: string
   sku?: string
   name?: string
   price?: number
