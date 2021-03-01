@@ -3,95 +3,35 @@
     <div class="footer-widgets__row__column">
       ULTIMELE INTRĂRI ÎN STOC
       <div class="small-divider"></div>
-      <div class="footer-widgets__row__column__element" id="first">
-        <img src="assets/temp/blackfooter.jpg" />
+      <div
+        class="footer-widgets__row__column__element"
+        *ngFor="let item of shownItems"
+      >
+        <img [src]="item.imageSrc" />
         <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
+          <a class="footer-widgets__row__column__element__text__name">{{
+            item.name
+          }}</a>
           <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
-          >
-        </div>
-      </div>
-      <div class="footer-widgets__row__column__element">
-        <img src="assets/temp/tempfooterimg.jpg" />
-        <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
-          <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
-          >
-        </div>
-      </div>
-      <div class="footer-widgets__row__column__element">
-        <img src="assets/temp/tempfooterimg.jpg" />
-        <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
-          <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
-          >
-        </div>
-      </div>
-      <div class="footer-widgets__row__column__element">
-        <img src="assets/temp/tempfooterimg.jpg" />
-        <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
-          <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
+            >{{ item.price }},00 MDL</span
           >
         </div>
       </div>
     </div>
-    <div class="footer-column">
+    <div class="footer-widgets__row__column">
       TOPUL VÂNZĂRILOR – BEST SELLING
       <div class="small-divider"></div>
-      <div class="footer-widgets__row__column__element" id="first">
-        <img src="assets/temp/tempfooterimg.jpg" />
+      <div
+        class="footer-widgets__row__column__element"
+        *ngFor="let item of shownItems"
+      >
+        <img [src]="item.imageSrc" />
         <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
+          <a class="footer-widgets__row__column__element__text__name">{{
+            item.name
+          }}</a>
           <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
-          >
-        </div>
-      </div>
-      <div class="footer-widgets__row__column__element">
-        <img src="assets/temp/tempfooterimg.jpg" />
-        <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
-          <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
-          >
-        </div>
-      </div>
-      <div class="footer-widgets__row__column__element">
-        <img src="assets/temp/tempfooterimg.jpg" />
-        <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
-          <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
-          >
-        </div>
-      </div>
-      <div class="footer-widgets__row__column__element">
-        <img src="assets/temp/tempfooterimg.jpg" />
-        <div class="footer-widgets__row__column__element__text">
-          <a class="footer-widgets__row__column__element__text__name"
-            >VEZZOLA NECESSAIRE</a
-          >
-          <span class="footer-widgets__row__column__element__text__price"
-            >2.139,00 MDL</span
+            >{{ item.price }},00 MDL</span
           >
         </div>
       </div>
