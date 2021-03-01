@@ -1,7 +1,4 @@
-<div *ngIf="loading; else loaded">
-  <app-loader></app-loader>
-</div>
-<ng-template #loaded>
+<div *ngIf="!loading; else loader">
   <div class="quick-view">
     <div class="image-slider" fxFlex="50">
       <img
@@ -38,4 +35,7 @@
       <a>Labels:{{ item.labels }}</a>
     </div>
   </div>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
 </ng-template>

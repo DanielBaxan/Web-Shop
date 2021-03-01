@@ -11,6 +11,7 @@ export class FooterWidgetsComponent {
   items: Array<ItemModel> = []
   shownItems: Array<ItemModel> = []
   shownItemsIdx = 0
+  loading = true
 
   constructor(private mainPageService: MainPageService) {
     this.mainPageService.getApi('items/getAllItems').subscribe(data => {
@@ -38,6 +39,7 @@ export class FooterWidgetsComponent {
       for (this.shownItemsIdx; this.shownItemsIdx < 4; this.shownItemsIdx++) {
         this.shownItems.push(this.items[this.shownItemsIdx])
       }
+      this.loading = false
     })
   }
 }

@@ -16,6 +16,7 @@ export class CarouselComponent implements OnInit {
   items: Array<ItemModel> = []
   shownItems: Array<ItemModel> = []
   shownItemsIdx = DIFFERENCE
+  loading = true
 
   constructor(
     private mainPageService: MainPageService,
@@ -48,6 +49,7 @@ export class CarouselComponent implements OnInit {
       // this.items.push(data[3])
       // this.items.push(data[4])
       // this.items.push(data[5])
+      this.loading = false
     })
   }
 

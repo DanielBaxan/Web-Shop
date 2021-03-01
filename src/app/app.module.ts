@@ -18,6 +18,7 @@ import { LoaderComponent } from './shared/components/loader/loader.component'
 import { PriceShowComponent } from './shared/components/price-show/price-show.component'
 import { SizeShowComponent } from './shared/components/size-show/size-show.component'
 import { ColorShowComponent } from './shared/components/color-show/color-show.component'
+import { SharedModule } from './shared/shared.module'
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
@@ -29,8 +30,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     QuickViewComponent,
     PriceShowComponent,
     SizeShowComponent,
-    ColorShowComponent,
-    LoaderComponent
+    ColorShowComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,8 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
         useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
   </button>
   <div class="vertical-line"></div>
 
-  <div class="components">
+  <div class="components" *ngIf="!loading; else loader">
     <ng-container *ngFor="let item of shownItems">
       <app-item-smallcard
         [wd]="150"
@@ -21,3 +21,7 @@
     <span class="arrow right"></span>
   </button>
 </div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
