@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { clickEventExport } from '../shared/components/item-smallcard/item-smallcard.component'
 import { QuickViewComponent } from '../shared/components/quick-view/quick-view.component'
 import { ItemModel } from '../shared/constants'
+import { CartService } from '../shared/services/cart.service'
 import { MainPageService } from './main-page.service'
 
 export interface Category {
@@ -18,8 +19,8 @@ export interface Category {
 export class MainPageComponent implements OnInit {
   public siteLang = 'ro'
   public testItems: Array<ItemModel> = []
-
   public categories: Array<Category> = []
+
   constructor(
     private mainPageService: MainPageService,
     private matDialog: MatDialog
@@ -35,7 +36,6 @@ export class MainPageComponent implements OnInit {
     //   data.forEach((item: ItemModel) => this.testItems.push(item))
     // })
   }
-
   // smallCardPressed(itemId: clickEventExport): void {
   //   if (['quickView', 'image'].includes(itemId.part.toString())) {
   //     const dialogRef = this.matDialog.open(QuickViewComponent, {

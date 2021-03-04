@@ -9,10 +9,13 @@
         <button mat-raised-button color="primary">AUTENTIFICARE</button>
       </div>
       <div class="line-divider"></div>
-      <div class="basket">
-        <div class="basket-text">COȘ / 0,00 MDL</div>
+      <div class="basket" [routerLink]="['/cart']">
+        <div class="basket-text">COȘ / {{ totalPrice }},00 MDL</div>
         <mat-icon svgIcon="cart"></mat-icon>
       </div>
+      <button mat-raised-button color="primary" (click)="testIncrement()">
+        +100
+      </button>
     </div>
   </div>
 </div>

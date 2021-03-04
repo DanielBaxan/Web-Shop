@@ -78,6 +78,10 @@ export const routes: Routes = [
       import('./categories/categories.module').then(m => m.CategoriesModule)
   },
   {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
