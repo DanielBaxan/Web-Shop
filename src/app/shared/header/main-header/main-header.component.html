@@ -6,7 +6,9 @@
     <div class="flex-col hide-for-medium flex-center"></div>
     <div class="flex-col hide-for-medium flex-right right-container">
       <div class="auth-btn">
-        <button mat-raised-button color="primary">AUTENTIFICARE</button>
+        <button mat-raised-button color="primary" (click)="openAuthDialog()">
+          AUTENTIFICARE
+        </button>
       </div>
       <div class="line-divider"></div>
       <div class="basket" [routerLink]="['/cart']">

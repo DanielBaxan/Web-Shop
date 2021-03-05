@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
 import { Subscription } from 'rxjs'
+import { AuthComponent } from 'src/app/auth/auth.component'
 import { CartService } from '../../services/cart.service'
 
 @Component({
@@ -10,7 +12,7 @@ import { CartService } from '../../services/cart.service'
 export class MainHeaderComponent implements OnDestroy {
   totalPrice = 0
   totalPrice$: Subscription
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private matDialog: MatDialog) {
     console.log('Const')
     this.totalPrice$ = this.cartService.totalPriceObservable.subscribe(
       totalPrice => {
@@ -33,5 +35,9 @@ export class MainHeaderComponent implements OnDestroy {
 
   testIncrement() {
     this.cartService.testIncrement()
+  }
+
+  openAuthDialog() {
+    this.matDialog.open(AuthComponent)
   }
 }

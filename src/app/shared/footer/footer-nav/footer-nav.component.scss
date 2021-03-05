@@ -43,11 +43,35 @@
           border-top: none;
         }
       }
-
+      // rgba(255, 255, 255, 0.09)
       mat-form-field {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.09);
+        background-color: transparent;
+        border-color: transparent;
+
+        &-wrapper {
+          background-color: rgba(255, 255, 255, 0.09);
+        }
       }
     }
+  }
+}
+
+:host ::ng-deep .mat-form-field {
+  &-wrapper {
+    background-color: rgba(255, 255, 255, 0.09);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  &-infix {
+    vertical-align: middle;
+    border: none;
+  }
+
+  &-outline {
+    vertical-align: middle;
   }
 }
