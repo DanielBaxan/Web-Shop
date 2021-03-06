@@ -7,6 +7,7 @@ import { TopHeaderComponent } from './top-header/top-header.component'
 import { AutoOpenMenuComponent } from './auto-open-menu/auto-open-menu.component'
 import { LangButtonComponent } from './lang-button/lang-button.component'
 import { SharedModule } from '../shared.module'
+import { AuthModule } from 'src/app/auth/auth.module'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { SharedModule } from '../shared.module'
     AutoOpenMenuComponent,
     LangButtonComponent
   ],
-  imports: [MaterialComponentsModule, SharedModule],
+  imports: [MaterialComponentsModule, SharedModule, AuthModule],
   exports: [HeaderComponent]
 })
 export class HeaderModule {}

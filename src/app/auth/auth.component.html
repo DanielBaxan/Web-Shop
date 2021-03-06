@@ -2,20 +2,19 @@
   <div class="column">
     <div class="title">Autentificare</div>
 
-    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
-    <div class="input-name">Nume utilizator sau adresă email *</div>
-    <input matInput formControlName="username" />
-    <div class="input-name">Parola *</div>
-    <input matInput formControlName="password" />
-    <!-- <mat-checkbox>Remember me!</mat-checkbox> -->
-    <!-- </form> -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="input-name">Nume utilizator sau adresă email *</div>
+      <input matInput formControlName="username" />
+      <div class="input-name">Parola *</div>
+      <input matInput formControlName="password" />
+      <mat-checkbox>Ține-mă minte</mat-checkbox>
+    </form>
     <button mat-raised-button color="primary" (click)="auth()">
       autentificare
     </button>
-    <a>Ai uitat parola?</a>
+    <a href="http://google.md">Ai uitat parola?</a>
   </div>
-  <div class="vertical-line"></div>
-  <div class="column">
+  <div class="column bordered">
     <div class="title">Înregistrare</div>
 
     <div class="input-name">Adresă email *</div>
@@ -24,7 +23,10 @@
     <div class="text-2">
       Your personal data will be used to support your experience throughout this
       website, to manage access to your account, and for other purposes
-      described in our <a>politică de confidențialitate</a>.
+      described in our
+      <a [routerLink]="['/privacy-policy']" target="_blank"
+        >politică de confidențialitate</a
+      >.
     </div>
     <button mat-raised-button color="primary" (click)="auth()">
       înregistrare
