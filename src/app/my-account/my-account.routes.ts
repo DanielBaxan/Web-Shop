@@ -13,6 +13,13 @@ export const myAccountRoutes: Routes = [
       import('./wishlist/wishlist.module').then(m => m.WishlistModule)
   },
   {
+    path: 'lost-password',
+    loadChildren: () =>
+      import('./lost-password/lost-password.module').then(
+        m => m.LostPasswordModule
+      )
+  },
+  {
     path: '',
     component: MyAccountComponent
   }

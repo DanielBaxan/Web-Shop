@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
+import { Router } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { AuthComponent } from 'src/app/auth/auth.component'
 import { CartService } from '../../services/cart.service'
@@ -12,7 +13,12 @@ import { CartService } from '../../services/cart.service'
 export class MainHeaderComponent implements OnDestroy {
   totalPrice = 0
   totalPrice$: Subscription
-  constructor(private cartService: CartService, private matDialog: MatDialog) {
+  routerMatDialog$ = new Subscription()
+  constructor(
+    private cartService: CartService,
+    private matDialog: MatDialog,
+    private router: Router
+  ) {
     console.log('Const')
     this.totalPrice$ = this.cartService.totalPriceObservable.subscribe(
       totalPrice => {
@@ -25,6 +31,7 @@ export class MainHeaderComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.totalPrice$.unsubscribe()
+    this.routerMatDialog$.unsubscribe()
   }
 
   toggleCartPriceUpdate() {
@@ -38,6 +45,10 @@ export class MainHeaderComponent implements OnDestroy {
   }
 
   openAuthDialog() {
-    this.matDialog.open(AuthComponent)
+    const dialogRef = this.matDialog.open(AuthComponent)
+    this.routerMatDialog$ = this.router.events.subscribe(() => {
+      // subscribe to close after routing
+      dialogRef.close()
+    })
   }
 }
