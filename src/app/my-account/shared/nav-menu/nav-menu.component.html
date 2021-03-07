@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="username">name <em>#id</em></div>
+  <div class="menu-items">
+    <div
+      class="item"
+      *ngFor="let item of menuItems"
+      [ngStyle]="
+        item === currentPage
+          ? { 'border-right': '3px solid black' }
+          : { 'border-right': '0' }
+      "
+    >
+      {{ item }}
+    </div>
+  </div>
+</div>
