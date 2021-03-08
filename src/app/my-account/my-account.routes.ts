@@ -1,5 +1,10 @@
 import { Routes } from '@angular/router'
-import { MyAccountComponent } from './my-account.component'
+import { EditAccountComponent } from './main-menu/edit-account/edit-account.component'
+import { EditAddressComponent } from './main-menu/edit-address/edit-address.component'
+import { LogoutComponent } from './main-menu/logout/logout.component'
+import { OrdersComponent } from './main-menu/orders/orders.component'
+import { WishlistComponent } from './main-menu/wishlist/wishlist.component'
+import { ControlPanelComponent } from './main-menu/control-panel/control-panel.component'
 
 export const myAccountRoutes: Routes = [
   {
@@ -9,8 +14,7 @@ export const myAccountRoutes: Routes = [
   },
   {
     path: 'wishlist',
-    loadChildren: () =>
-      import('./wishlist/wishlist.module').then(m => m.WishlistModule)
+    component: WishlistComponent
   },
   {
     path: 'lost-password',
@@ -20,7 +24,23 @@ export const myAccountRoutes: Routes = [
       )
   },
   {
+    path: 'orders',
+    component: OrdersComponent
+  },
+  {
+    path: 'edit-address',
+    component: EditAddressComponent
+  },
+  {
+    path: 'edit-account',
+    component: EditAccountComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
+  },
+  {
     path: '',
-    component: MyAccountComponent
+    component: ControlPanelComponent
   }
 ]

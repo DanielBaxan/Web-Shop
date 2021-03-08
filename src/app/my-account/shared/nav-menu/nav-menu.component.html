@@ -3,14 +3,26 @@
   <div class="menu-items">
     <div
       class="item"
-      *ngFor="let item of menuItems"
       [ngStyle]="
-        item === currentPage
+        currentPage === ''
           ? { 'border-right': '3px solid black' }
           : { 'border-right': '0' }
       "
+      [routerLink]="['/my-account']"
     >
-      {{ item }}
+      panou control
+    </div>
+    <div
+      class="item"
+      *ngFor="let item of menuItems | keyvalue: unsorted"
+      [ngStyle]="
+        item.key?.toString() === currentPage
+          ? { 'border-right': '3px solid black' }
+          : { 'border-right': '0' }
+      "
+      [routerLink]="['/my-account', item.key]"
+    >
+      {{ item.value }}
     </div>
   </div>
 </div>
