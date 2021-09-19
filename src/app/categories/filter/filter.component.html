@@ -2,7 +2,8 @@
   <mat-icon>menu</mat-icon> VEZI FILTRE
 </button>
 <div class="filters" *ngIf="filtersOpened">
-  <div class="title">Filtru preț:</div>
+  <br>
+  <div class="title"><strong>Filtru preț:</strong></div>
   <div class="small-divider"></div>
   <div class="custom-slider">
     <ngx-slider
@@ -11,28 +12,33 @@
       [options]="options"
     ></ngx-slider>
   </div>
-  <div class="price">Preț: {{ minValue }} MDL - {{ maxValue }} MDL</div>
-  <div class="title">Filtru culoare:</div>
+  <button mat-button color ="primary" (click)="applyFilters()">
+    <strong>FILTREAZĂ</strong>
+  </button>
+  <div class="price">Preț: <strong>{{ minValue }} MDL - {{ maxValue }} MDL</strong></div>
+  <br>
+  <div class="title"><strong>Filtru culoare:</strong></div>
   <div class="small-divider"></div>
-  <mat-form-field appearance="fill">
-    <mat-select>
-      <mat-option *ngFor="let color of colors" [value]="color">
-        {{ color }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div class="title">Filtru mărime:</div>
+  <ng-select bindLabel="name"
+                placeholder="Alegeți Culoarea"
+                panellclass="my-panel"
+                appendTo="body"
+                [searchable]="false" 
+                [clearable]="false">
+                <ng-option [value]="colors" *ngFor="let color of colors">
+                    {{color}}
+                </ng-option>
+  </ng-select>
+  <br>
+  <div class="title"><strong>Filtru mărime:</strong></div>
   <div class="small-divider"></div>
-  <mat-form-field appearance="fill">
-    <mat-select>
-      <mat-option *ngFor="let size of sizes" [value]="size">
-        {{ size }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div>
-    <button mat-raised-button color="primary" (click)="applyFilters()">
-      Aplică Filtre
-    </button>
-  </div>
+  <ng-select bindLabel="name"
+                placeholder="Alegeți Mărimea"
+                appendTo="body"
+                [searchable]="false" 
+                [clearable]="false">
+                <ng-option [value]="sizes" *ngFor="let size of sizes">
+                    {{size}}
+                </ng-option>
+  </ng-select>
 </div>

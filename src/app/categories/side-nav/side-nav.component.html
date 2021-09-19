@@ -1,42 +1,35 @@
 <div class="nav__column">
-  <div class="nav__column__title">Navighează Categorii:</div>
+  <br>
+  <div class="nav__column__title"><strong><th>NAVIGHEAZĂ CATEGORII:</th></strong></div>
   <div class="small-divider"></div>
   <div *ngFor="let item of categories">
     <div class="nav__column__item">
-      <a [routerLink]="['/catalogue', item.mainCategory]">
-        {{ item.mainCategory }}
+        <button id ={{arrow}} class="fas fa-angle-down"*ngIf="item.categories !== undefined"  (click)="item.hidden = !item.hidden;submit()">
+        </button>
+      <a style="font-size: 14px;"  [routerLink]="['/catalogue', item.mainCategory]">
+          {{ item.mainCategory  }}
       </a>
-      <mat-icon
-        *ngIf="item.categories !== undefined"
-        (click)="item.hidden = !item.hidden"
-        >keyboard_arrow_down</mat-icon
-      >
-      <div *ngFor="let category of item.categories">
-        <div *ngIf="!item.hidden" class="nav__column__item__hidden">
-          <a
-            [routerLink]="['/catalogue', item.mainCategory, category.category]"
-            >{{ category.category }}</a
-          >
-          <mat-icon
-            *ngIf="category.subCategories !== undefined"
-            (click)="category.hidden = !category.hidden"
-            >keyboard_arrow_down</mat-icon
-          >
-          <div *ngFor="let subCategory of category.subCategories">
-            <div *ngIf="!category.hidden" class="nav__column__item__hidden">
-              <a
-                [routerLink]="[
-                  '/catalogue',
-                  item.mainCategory,
-                  category.category,
-                  subCategory
-                ]"
-                >{{ subCategory }}</a
-              >
-            </div>
+    <ul><div *ngFor="let category of item.categories">
+          <div *ngIf="!item.hidden" class="nav__column__item__hidden">
+            
+            <a style="font-size: 13px;"
+                [routerLink]="['/catalogue', item.mainCategory, category.category]"
+                >{{ category.category | uppercase  }}</a> <button id="{{arrow2}}"class="fas fa-angle-down "  *ngIf="category.subCategories !== undefined"(click)="category.hidden = !category.hidden;submit2()"></button>
+           <ul><div *ngFor="let subCategory of category.subCategories">
+                <div *ngIf="!category.hidden" class="nav__column__item__hidden">
+                  <a style="font-size: 13px;"
+                    [routerLink]="[
+                    '/catalogue',
+                    item.mainCategory,
+                    category.category,
+                    subCategory
+                  ]"
+                    >{{ subCategory | uppercase  }}</a>
+              </div>
+            </div></ul>
           </div>
-        </div>
-      </div>
+        </div></ul>
     </div>
   </div>
 </div>
+
