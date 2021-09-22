@@ -4,8 +4,12 @@
 }
 .mat-raised-button {
   left: 15px;
+  outline: none;
+  border: none;
 }
 .mat-button {
+  outline: none;
+  border: none;
   left: 15px;
   border-radius: 99px;
   background-color: #666;
@@ -24,7 +28,7 @@
 ngx-slider {
   left: 15px;
   width: 220px;
-
+  
 }
 .small-divider{
   position: relative;

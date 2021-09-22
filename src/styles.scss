@@ -46,6 +46,7 @@ $pallete-black: (
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
+  $font-family: 'PT Sans, sans-serif',
   $headline: mat-typography-level(32px, 48px, 700),
   $body-1: mat-typography-level(15px, 23px, 500)
 );
@@ -86,7 +87,6 @@ body {
 }
 body {
   margin: 0;
-  font-family: 'PT Sans', sans-serif;
 }
 
 // Header common styles

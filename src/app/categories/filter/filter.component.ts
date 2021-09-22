@@ -4,8 +4,8 @@ import { NONE_TYPE } from '@angular/compiler'
 
 
 
-export const colors = ['alb', 'negru', 'verde']
-export const sizes = ['small', 'medium', 'big']
+export const colors = ['Alb', 'Negru', 'Verde']
+export const sizes = ['Small', 'Medium', 'Big']
 
 @Component({
   selector: 'app-filter',
