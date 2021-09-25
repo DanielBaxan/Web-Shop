@@ -4,8 +4,10 @@
   <div class="small-divider"></div>
   <div *ngFor="let item of categories;let i = index">
     <div class="nav__column__item">
+      <!-- TO DO -->
       <div *ngIf="item.categories !== undefined" (click)="item.hidden = !item.hidden"><button id="{{angle}}" class="fas fa-angle-down arr"  *ngIf="i==3"  (click)="submit()"></button><button id="{{angle1}}" class="fas fa-angle-down"  *ngIf="i==4"  (click)="submit3()"></button><button id="{{angle2}}" class="fas fa-angle-down"  *ngIf="i==5"  (click)="submit4()"></button><button id="{{angle3}}" class="fas fa-angle-down"  *ngIf="i==6"  (click)="submit5()"></button><button id="{{angle4}}" class="fas fa-angle-down"  *ngIf="i==7"  (click)="submit6()"></button>
       </div>
+      <!---->
       <a style="font-size: 14px;"  [routerLink]="['/catalogue', item.mainCategory]">
           {{ item.mainCategory  }}
       </a>
@@ -13,8 +15,8 @@
           <div *ngIf="!item.hidden" class="nav__column__item__hidden">
             <a style="font-size: 13px;"
                 [routerLink]="['/catalogue', item.mainCategory, category.category]"
-                >{{ category.category | uppercase  }}</a><button id="{{arrow0}}"class="fas fa-angle-down "  *ngIf="a==0 && i==3"(click)="category.hidden = !category.hidden;submit10()"></button><button id="{{arrow2}}"class="fas fa-angle-down "  *ngIf="a==2 && i==3"(click)="category.hidden = !category.hidden;submit12()"></button><button id="{{arrow3}}"class="fas fa-angle-down "  *ngIf="a==3 && i==3"(click)="category.hidden = !category.hidden;submit13()"></button><button id="{{arrow4}}"class="fas fa-angle-down "  *ngIf="a==4 && i==3"(click)="category.hidden = !category.hidden;submit14()"></button><button id="{{arrow20}}"class="fas fa-angle-down "  *ngIf="a==0 && i==4"(click)="category.hidden = !category.hidden;submit20()"></button><button id="{{arrow22}}"class="fas fa-angle-down "  *ngIf="a==2 && i==4"(click)="category.hidden = !category.hidden;submit22()"></button><button id="{{arrow23}}"class="fas fa-angle-down "  *ngIf="a==3 && i==4"(click)="category.hidden = !category.hidden;submit23()"></button><button id="{{arrow24}}"class="fas fa-angle-down "  *ngIf="a==4 && i==4"(click)="category.hidden = !category.hidden;submit24()"></button><button id="{{arrow42}}"class="fas fa-angle-down "  *ngIf="a==2 && i==7"(click)="category.hidden = !category.hidden;submit42()"></button><button id="{{arrow43}}"class="fas fa-angle-down "  *ngIf="a==3 && i==7"(click)="category.hidden = !category.hidden;submit43()"></button>
-
+                >{{ category.category | uppercase  }}</a><!-- TO DO --><button id="{{arrow0}}"class="fas fa-angle-down "  *ngIf="a==0 && i==3"(click)="category.hidden = !category.hidden;submit10()"></button><button id="{{arrow2}}"class="fas fa-angle-down "  *ngIf="a==2 && i==3"(click)="category.hidden = !category.hidden;submit12()"></button><button id="{{arrow3}}"class="fas fa-angle-down "  *ngIf="a==3 && i==3"(click)="category.hidden = !category.hidden;submit13()"></button><button id="{{arrow4}}"class="fas fa-angle-down "  *ngIf="a==4 && i==3"(click)="category.hidden = !category.hidden;submit14()"></button><button id="{{arrow20}}"class="fas fa-angle-down "  *ngIf="a==0 && i==4"(click)="category.hidden = !category.hidden;submit20()"></button><button id="{{arrow22}}"class="fas fa-angle-down "  *ngIf="a==2 && i==4"(click)="category.hidden = !category.hidden;submit22()"></button><button id="{{arrow23}}"class="fas fa-angle-down "  *ngIf="a==3 && i==4"(click)="category.hidden = !category.hidden;submit23()"></button><button id="{{arrow24}}"class="fas fa-angle-down "  *ngIf="a==4 && i==4"(click)="category.hidden = !category.hidden;submit24()"></button><button id="{{arrow42}}"class="fas fa-angle-down "  *ngIf="a==2 && i==7"(click)="category.hidden = !category.hidden;submit42()"></button><button id="{{arrow43}}"class="fas fa-angle-down "  *ngIf="a==3 && i==7"(click)="category.hidden = !category.hidden;submit43()"></button>
+                                              <!---->   
                 <div *ngIf="category.subCategories !== undefined"></div>
            <ul><div *ngFor="let subCategory of category.subCategories">
                 <div *ngIf="!category.hidden" class="nav__column__item__hidden">
