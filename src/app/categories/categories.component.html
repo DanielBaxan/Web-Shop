@@ -1,16 +1,18 @@
 <app-header></app-header>
 <div class="content">
   <div class="top-row">
-    <div class="path">{{ path }}</div>
+    <div class="path"><strong>{{ path | uppercase }}</strong></div>
+    <div class="Afs">Afișez 1-{{ currentMaxResults }} din {{ maxResults }} de rezultate  </div>
     <div class="results">
-      Afișez 1-{{ currentMaxResults }} din {{ maxResults }} de rezultate
-      <mat-form-field appearance="fill">
-        <mat-select [(value)]="defaultSort">
-          <mat-option *ngFor="let sort of sortings" [value]="sort">
-            Sortează după {{ sort }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <ng-select bindLabel="name"
+      placeholder="Sortare după..."
+      appendTo="body"
+      [searchable]="false" 
+      [clearable]="false">
+      <ng-option [value]="sortings" *ngFor="let sort of sortings">
+          {{sort}}
+      </ng-option>
+</ng-select>
     </div>
   </div>
   <div class="main">

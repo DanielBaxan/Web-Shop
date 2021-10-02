@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { NgSelect2Module } from 'ng-select2'
 import { CommonModule } from '@angular/common'
 import { CategoriesComponent } from './categories.component'
 import { RouterModule } from '@angular/router'
@@ -10,6 +11,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider'
 import { SideNavComponent } from './side-nav/side-nav.component'
 import { categoriesRoutes } from './categories.routes'
 import { SharedModule } from '../shared/shared.module'
+import { NgSelectModule } from '@ng-select/ng-select'
 
 @NgModule({
   declarations: [CategoriesComponent, FilterComponent, SideNavComponent],
@@ -20,7 +22,9 @@ import { SharedModule } from '../shared/shared.module'
     FooterModule,
     MaterialComponentsModule,
     NgxSliderModule,
-    SharedModule
+    SharedModule,
+    NgSelect2Module,
+    NgSelectModule
   ]
 })
 export class CategoriesModule {}

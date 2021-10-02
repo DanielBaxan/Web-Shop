@@ -46,7 +46,7 @@ export interface ItemModelVariation {
 }
 
 export interface MainCategoryInterface {
-  mainCategory: string
+  mainCategory: string 
   hidden?: boolean
   categories?: Array<CategoriesInterface>
 }
@@ -58,11 +58,11 @@ export interface CategoriesInterface {
 }
 
 export const categories: Array<MainCategoryInterface> = [
-  { mainCategory: 'spring 2020' },
-  { mainCategory: 'summer 2020' },
-  { mainCategory: 'autumn 2020' },
+  { mainCategory: 'Spring 2020' },
+  { mainCategory: 'Summer 2020' },
+  { mainCategory: 'Autumn 2020' },
   {
-    mainCategory: 'femei',
+    mainCategory: 'FEMEI',
     hidden: true,
     categories: [
       {
@@ -113,7 +113,7 @@ export const categories: Array<MainCategoryInterface> = [
     ]
   },
   {
-    mainCategory: 'bărbați',
+    mainCategory: 'BĂRBAȚI',
     hidden: true,
     categories: [
       {
@@ -159,7 +159,7 @@ export const categories: Array<MainCategoryInterface> = [
     ]
   },
   {
-    mainCategory: 'marciano',
+    mainCategory: 'MARCIANO',
     hidden: true,
     categories: [
       { category: 'marciano femei' },
@@ -167,7 +167,7 @@ export const categories: Array<MainCategoryInterface> = [
     ]
   },
   {
-    mainCategory: 'copii',
+    mainCategory: 'COPII',
     hidden: true,
     categories: [
       { category: 'fete' },
@@ -176,7 +176,7 @@ export const categories: Array<MainCategoryInterface> = [
     ]
   },
   {
-    mainCategory: 'new arrivals',
+    mainCategory: 'NEW ARRIVALS',
     hidden: true,
     categories: [
       { category: 'new arrivals băieți' },

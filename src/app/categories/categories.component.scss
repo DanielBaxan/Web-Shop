@@ -2,35 +2,74 @@
   max-width: 1155px;
   margin-right: auto;
   margin-left: auto;
+  margin-top:20px;
 }
 
 .top-row {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  .path {
-    margin-right: auto;
+  margin-bottom: 20px;
+}
+.results{
+  display: inline-block;
+}
+.Afs{
+  margin-right: 10px;
+}
+:host ::ng-deep {
+  ng-select {
+    width: 220px;
+    .ng-dropdown-panel {
+      width: auto;
+      left: 30px;
+      width: 220px;
+      min-width: 20px;
+      top: 701.2px;
+      bottom: auto;
+      opacity: 1;
+     } 
+  }
+  .ng-select .ng-arrow-wrapper .ng-arrow {
+    pointer-events: none;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    position: relative;
   }
 }
+
+.path {
+    margin-right: auto;
+    color: rgba(102,102,102,0.7);
+    font-weight: normal;
+  }
 
 .main {
   display: flex;
   flex-direction: row;
 
   .column-small {
-    flex-basis: 25%;
+    flex-basis: 15%;
+    width: 240px;
+
   }
+  .column-big{
+    max-width: 1155px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
   .column-big__items {
     display: flex;
     flex-flow: row wrap;
+    width: 220px;
   }
 
   button {
-    display: block;
     margin-left: auto;
     margin-right: auto;
     text-transform: uppercase;
   }
+  
 }

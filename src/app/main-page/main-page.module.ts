@@ -11,6 +11,8 @@ import { ItemSmallCardComponent } from '../shared/components/item-smallcard/item
 import { HeaderModule } from '../shared/header/header.module'
 import { ScrollBtnComponent } from './scroll-btn/scroll-btn.component'
 import { CarouselComponent } from '../shared/components/carousel/carousel.component'
+import { NgSelect2Module } from 'ng-select2'
+import { NgSelectModule } from '@ng-select/ng-select'
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { CarouselComponent } from '../shared/components/carousel/carousel.compon
     MDBBootstrapModule.forRoot(),
     SharedModule,
     FooterModule,
-    HeaderModule
+    HeaderModule,
+    NgSelect2Module,
+    NgSelectModule,
   ]
 })
 export class MainPageModule {}

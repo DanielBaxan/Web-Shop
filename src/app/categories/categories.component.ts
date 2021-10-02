@@ -5,6 +5,7 @@ import { MainPageService } from '../main-page/main-page.service'
 import { clickEventExport } from '../shared/components/item-smallcard/item-smallcard.component'
 import { ItemModel } from '../shared/constants'
 
+
 const sortingOptions = [
   'popularitate',
   'cele mai recente',
@@ -85,11 +86,11 @@ export class CategoriesComponent implements OnDestroy {
   resetData() {
     this.path = 'prima pagină'
     this.activatedRoute$ = this.activatedRoute.params.subscribe(params => {
-      let mainCategory = params['mainCategory']
+      let mainCategory = params['mainCategory'] 
       let category = params['category']
       let subCategory = params['subCategory']
 
-      this.path = this.path + ` / ${mainCategory}`
+      this.path = this.path + ` / ${mainCategory} `
       if (category !== undefined) {
         this.path = this.path + ` / ${category}`
       }

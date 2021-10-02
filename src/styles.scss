@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+@import "~@ng-select/ng-select/themes/ant.design.theme.css";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -86,7 +87,6 @@ body {
 }
 body {
   margin: 0;
-  font-family: 'PT Sans', sans-serif;
 }
 
 // Header common styles
@@ -117,3 +117,4 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
