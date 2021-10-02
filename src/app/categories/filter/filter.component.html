@@ -1,0 +1,44 @@
+<button mat-raised-button color="primary" (click)="toggleFilters()">
+  <mat-icon>menu</mat-icon> VEZI FILTRE
+</button>
+<div class="filters" *ngIf="filtersOpened">
+  <br>
+  <div class="title"><strong>Filtru preț:</strong></div>
+  <div class="small-divider"></div>
+  <div class="custom-slider">
+    <ngx-slider
+      [(value)]="minValue"
+      [(highValue)]="maxValue"
+      [options]="options"
+    ></ngx-slider>
+  </div>
+  <button mat-button color ="primary" (click)="applyFilters()">
+    <strong>FILTREAZĂ</strong>
+  </button>
+  <div class="price">Preț: <strong>{{ minValue }} MDL - {{ maxValue }} MDL</strong></div>
+  <br>
+  <div class="title"><strong>Filtru culoare:</strong></div>
+  <div class="small-divider"></div>
+  <ng-select bindLabel="name"
+                placeholder="Alegeți Culoarea"
+                panellclass="my-panel"
+                appendTo="body"
+                [searchable]="false" 
+                [clearable]="false">
+                <ng-option [value]="colors" *ngFor="let color of colors">
+                    {{color}}
+                </ng-option>
+  </ng-select>
+  <br>
+  <div class="title"><strong>Filtru mărime:</strong></div>
+  <div class="small-divider"></div>
+  <ng-select bindLabel="name"
+                placeholder="Alegeți Mărimea"
+                appendTo="body"
+                [searchable]="false" 
+                [clearable]="false">
+                <ng-option [value]="sizes" *ngFor="let size of sizes">
+                    {{size}}
+                </ng-option>
+  </ng-select>
+</div>

@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="content">
+  <div class="top-row">
+    <div class="path"><strong>{{ path | uppercase }}</strong></div>
+    <div class="Afs">Afișez 1-{{ currentMaxResults }} din {{ maxResults }} de rezultate  </div>
+    <div class="results">
+      <ng-select bindLabel="name"
+      placeholder="Sortare după..."
+      appendTo="body"
+      [searchable]="false" 
+      [clearable]="false">
+      <ng-option [value]="sortings" *ngFor="let sort of sortings">
+          {{sort}}
+      </ng-option>
+</ng-select>
+    </div>
+  </div>
+  <div class="main">
+    <div class="column-small">
+      <app-filter></app-filter>
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="column-big">
+      <div class="column-big__items" *ngIf="!loading; else loader">
+        <ng-container *ngFor="let item of shownItems">
+          <app-item-smallcard
+            [wd]="225"
+            [ht]="200 * 1.5"
+            [item]="item"
+            (smallCardPressed)="smallCardPressed($event)"
+          ></app-item-smallcard>
+        </ng-container>
+      </div>
+      <ng-template #loader>
+        <app-loader></app-loader>
+      </ng-template>
+      <button
+        *ngIf="!this.hideViewMore"
+        [disabled]="loading"
+        mat-raised-button
+        color="primary"
+        (click)="viewMore()"
+      >
+        Încarcă mai multe
+      </button>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

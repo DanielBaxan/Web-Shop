@@ -1,0 +1,19 @@
+.menu-btn {
+  background-color: black;
+  color: white;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu-panel {
+  // border: 1px solid gray;
+  margin: 0px;
+  padding: 0px;
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: none !important;
+  border: 2px solid #ddd;
+  border-radius: 0px;
+}

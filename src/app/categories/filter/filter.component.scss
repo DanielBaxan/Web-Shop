@@ -1,0 +1,93 @@
+.title {
+  text-transform: uppercase;
+  padding: 0 15px;
+}
+.mat-raised-button {
+  left: 15px;
+  outline: none;
+  border: none;
+}
+.mat-button {
+  outline: none;
+  border: none;
+  left: 15px;
+  border-radius: 99px;
+  background-color: #666;
+  color:#f1f1f1;
+  float: left;
+  font-size: .60em;
+  line-height: 25px;
+}
+.price {
+  padding:  0 90px;
+  font-size: .8em;
+  text-align: right;
+  width: 287px;
+}
+
+ngx-slider {
+  left: 15px;
+  width: 220px;
+  
+}
+.small-divider{
+  position: relative;
+  left: 15px;
+}
+
+:host ::ng-deep {
+  .custom-slider .ngx-slider .ngx-slider-bar {
+    background: #f1f1f1;
+    height: 3px;
+  }
+  .custom-slider .ngx-slider .ngx-slider-selection {
+    background: #666;
+  }
+
+  .custom-slider .ngx-slider .ngx-slider-pointer {
+    position: absolute;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    outline: none;
+    top: -5px;
+    background-color: #666;
+    border-radius: 999px
+  }
+
+  ng-select {
+    margin: 15px;
+    width: 220px;
+    .ng-dropdown-panel {
+      width: auto;
+      left: 30px;
+      width: 220px;
+      min-width: 20px;
+      top: 701.2px;
+      bottom: auto;
+      opacity: 1;
+     } 
+  }
+  .ng-select .ng-arrow-wrapper .ng-arrow {
+    pointer-events: none;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    position: relative;
+}
+  .custom-slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
+    visibility: hidden
+  }
+
+  .custom-slider .ngx-slider .ngx-slider-bubble {
+    visibility: hidden;
+    bottom: 8px;
+  }
+
+  .custom-slider .ngx-slider .ngx-slider-limit {
+    display: none;
+    visibility: hidden
+  }
+}

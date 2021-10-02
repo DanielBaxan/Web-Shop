@@ -1,0 +1,48 @@
+<div class="footer-widgets">
+  <div class="footer-widgets__row">
+    <div class="footer-widgets__row__column">
+      ULTIMELE INTRĂRI ÎN STOC
+      <div class="small-divider"></div>
+      <div *ngIf="!loading; else loader">
+        <div
+          class="footer-widgets__row__column__element"
+          *ngFor="let item of shownItems"
+        >
+          <img [src]="item.imageSrc" />
+          <div class="footer-widgets__row__column__element__text">
+            <a class="footer-widgets__row__column__element__text__name">{{
+              item.name
+            }}</a>
+            <span class="footer-widgets__row__column__element__text__price"
+              >{{ item.price }},00 MDL</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-widgets__row__column">
+      TOPUL VÂNZĂRILOR – BEST SELLING
+      <div class="small-divider"></div>
+      <div *ngIf="!loading; else loader">
+        <div
+          class="footer-widgets__row__column__element"
+          *ngFor="let item of shownItems"
+        >
+          <img [src]="item.imageSrc" />
+          <div class="footer-widgets__row__column__element__text">
+            <a class="footer-widgets__row__column__element__text__name">{{
+              item.name
+            }}</a>
+            <span class="footer-widgets__row__column__element__text__price"
+              >{{ item.price }},00 MDL</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

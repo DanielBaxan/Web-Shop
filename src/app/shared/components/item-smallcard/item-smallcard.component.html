@@ -1,0 +1,59 @@
+<div class="card" [style.width.px]="wd" [style.height]="'auto'">
+  <div
+    class="preview-image"
+    [style.width.px]="wd"
+    [style.height.px]="ht"
+    (click)="onSomethingClick($event, item._id, imgPart.image)"
+  >
+    <img [src]="item.imageSrc ? item.imageSrc[0] : ''" [alt]="item.name" />
+    <div
+      class="preview-heart"
+      (click)="onSomethingClick($event, item._id, imgPart.heart)"
+    >
+      <mat-icon>favorite_border</mat-icon>
+    </div>
+    <div
+      class="preview-box"
+      (click)="onSomethingClick($event, item._id, imgPart.travel)"
+    >
+      <mat-icon>card_travel</mat-icon>
+    </div>
+    <div
+      class="preview-info"
+      (click)="onSomethingClick($event, item._id, imgPart.quickView)"
+    >
+      <span> Quick View</span>
+    </div>
+  </div>
+  <div
+    fxLayout="column"
+    class="preview-text"
+    (click)="onSomethingClick($event, item._id, imgPart.text)"
+  >
+    <div class="name">{{ item.name }}</div>
+    <div
+      fxFlex
+      fxLayout="row"
+      fxLayoutGap="5"
+      fxLayoutAlign="space-around center"
+    >
+      <div
+        class="price"
+        [ngStyle]="{
+          'text-decoration':
+            item.discountedPrice !== undefined && item.discountedPrice! > 0
+              ? 'line-through'
+              : 'none'
+        }"
+      >
+        {{ item.price | number: '.1' }} MDL
+      </div>
+      <div
+        *ngIf="item.discountedPrice !== undefined && item.discountedPrice! > 0"
+        class="item-discountedPrice"
+      >
+        {{ item.discountedPrice | number: '.1' }} MDL
+      </div>
+    </div>
+  </div>
+</div>
