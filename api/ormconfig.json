@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "sql11.freemysqlhosting.net",
+  "port": 3306,
+  "username": "sql11439943",
+  "password": "SJVdArxgdd",
+  "database": "sql11439943",
+  "charset": "utf8_romanian_ci",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true,
+  "logging": false
+}

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class MainPageService {
-  private baseUrl = 'http://localhost:5000/api/'
+  private baseUrl = 'http://localhost:5000/api/v1/'
   constructor(private http: HttpClient) {}
 
   getApi(addToUrl: string): Observable<any> {

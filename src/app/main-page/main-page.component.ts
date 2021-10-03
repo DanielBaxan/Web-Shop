@@ -27,7 +27,7 @@ export class MainPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.mainPageService.getApi('categories/getAll').subscribe(data => {
+    this.mainPageService.getApi('categories').subscribe(data => {
       data.forEach((cat: Category) => {
         this.categories.push(cat)
       })

@@ -35,7 +35,7 @@ export class CategoriesComponent implements OnDestroy {
     private activatedRoute: ActivatedRoute,
     private mainPageService: MainPageService
   ) {
-    this.mainPageService.getApi('items/getAllItems').subscribe(data => {
+    this.mainPageService.getApi('').subscribe(data => {
       data.forEach((item: ItemModel) => this.items.push(item))
 
       // TESTING BLOCK
