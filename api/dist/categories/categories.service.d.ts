@@ -11,6 +11,6 @@ export declare class CategoriesService {
     findAll(): Promise<Category[]>;
     findOne(id: number): string;
     update(id: number): string;
-    remove(id: number): string;
+    remove(id: number): Promise<import("typeorm").DeleteResult>;
     forwardError(err: any): void;
 }

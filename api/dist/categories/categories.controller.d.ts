@@ -10,5 +10,5 @@ export declare class CategoriesController {
     findAll(): Promise<import("./entities/category.entity").Category[]>;
     findOne(id: string): string;
     update(id: string): string;
-    remove(id: string): string;
+    remove(id: string): Promise<import("typeorm").DeleteResult>;
 }

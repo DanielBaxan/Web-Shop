@@ -39,8 +39,13 @@ export class CategoriesService {
     return `This action updates a #${id} category`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} category`;
+  async remove(id: number) {
+    try {
+      const res = await this.categoryRepo.delete(id); 
+      return res;
+    } catch (err) {
+      this.forwardError(err);
+    }
   }
 
   public forwardError(err) {

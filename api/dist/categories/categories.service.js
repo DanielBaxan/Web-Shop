@@ -45,8 +45,14 @@ let CategoriesService = class CategoriesService {
     update(id) {
         return `This action updates a #${id} category`;
     }
-    remove(id) {
-        return `This action removes a #${id} category`;
+    async remove(id) {
+        try {
+            const res = await this.categoryRepo.delete(id);
+            return res;
+        }
+        catch (err) {
+            this.forwardError(err);
+        }
     }
     forwardError(err) {
         throw new common_1.HttpException('_from categories' + (err.sqlMessage || err.message), 508);
