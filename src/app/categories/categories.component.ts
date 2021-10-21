@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
+import { Category } from 'API/dist/categories/entities/category.entity'
 import { Subscription } from 'rxjs'
 import { MainPageService } from '../main-page/main-page.service'
 import { clickEventExport } from '../shared/components/item-smallcard/item-smallcard.component'
@@ -25,8 +26,8 @@ export class CategoriesComponent implements OnDestroy {
   path = ''
   navigation$
   activatedRoute$: Subscription = new Subscription()
-  items: Array<ItemModel> = []
-  shownItems: Array<ItemModel> = []
+  items: Array<Category> = []
+  shownItems: Array<Category> = []
   shownItemsIdx = 0
   hideViewMore = false
   loading = true
@@ -35,8 +36,8 @@ export class CategoriesComponent implements OnDestroy {
     private activatedRoute: ActivatedRoute,
     private mainPageService: MainPageService
   ) {
-    this.mainPageService.getApi('').subscribe(data => {
-      data.forEach((item: ItemModel) => this.items.push(item))
+    this.mainPageService.getApi('categories').subscribe(data => {
+      data.forEach((item:Category) => this.items.push(item))
 
       // TESTING BLOCK
       this.items.push(data[1])

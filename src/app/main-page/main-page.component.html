@@ -150,7 +150,15 @@
       </div> -->
 
       <div class="carousel-container">
-        <app-carousel></app-carousel>
+        <div class="cardViewtest" fxLayoutGap="20px">
+          <ng-container *ngFor="let cat of categories">
+            <app-categories-card
+              [categoryName]="cat.name"
+              [categoryImage]="cat.imageSrc"
+              [cardWidth]="'170px'"
+            ></app-categories-card>
+          </ng-container>
+        </div>
       </div>
     </div>
 

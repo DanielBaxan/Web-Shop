@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Category } from 'API/dist/categories/entities/category.entity'
 import { MainPageService } from 'src/app/main-page/main-page.service'
 import { ItemModel } from '../../constants'
 
@@ -8,14 +9,14 @@ import { ItemModel } from '../../constants'
   styleUrls: ['./footer-widgets.component.scss']
 })
 export class FooterWidgetsComponent {
-  items: Array<ItemModel> = []
-  shownItems: Array<ItemModel> = []
+  items: Array<Category> = []
+  shownItems: Array<Category> = []
   shownItemsIdx = 0
   loading = true
 
   constructor(private mainPageService: MainPageService) {
-    this.mainPageService.getApi('items/getAllItems').subscribe(data => {
-      data.forEach((item: ItemModel) => this.items.push(item))
+    this.mainPageService.getApi('categories').subscribe(data => {
+      data.forEach((item: Category) => this.items.push(item))
 
       // TESTING BLOCK
       this.items.push(data[1])

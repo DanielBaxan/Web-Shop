@@ -49,9 +49,15 @@ export interface MainCategoryInterface {
   mainCategory: string
   hidden?: boolean
   categories?: Array<CategoriesInterface>
+  price?:string
+  _id?: string
+  size?: string
+
 }
 
 export interface CategoriesInterface {
+  _id?: string
+  size?: string
   category: string
   hidden?: boolean
   subCategories?: string[]
