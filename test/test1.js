@@ -1,6 +1,11 @@
 var assert = require('chai').assert;
 var numbers = [1, 2, 3, 4, 5];
-
-assert.isArray(numbers, 'is array of numbers');
-assert.include(numbers, 2, 'array contains 2');
-assert.lengthOf(numbers, 5, 'array contains 5 numbers');
+it('is array of numbers', function() {
+    assert.isArray(numbers);
+});
+it('array contains 2', function() {
+    assert.include(numbers,2);
+});
+it('array contains 5 numbers', function() {
+    assert.lengthOf(numbers,5);
+});
