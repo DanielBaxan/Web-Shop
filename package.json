@@ -31,7 +31,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "@types/chart.js": "^2.9.34",
     "@types/select2": "^4.0.54",
-    "angular-bootstrap-md": "^10.1.1",
+    "angular-bootstrap-md": "^11.1.0",
     "angular-datatables": "^12.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.1.1",
