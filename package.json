@@ -31,6 +31,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "@types/chart.js": "^2.9.34",
     "@types/select2": "^4.0.54",
+    "@types/source-map": "^0.5.2",
     "angular-bootstrap-md": "^11.1.0",
     "angular-datatables": "^12.0.0",
     "animate.css": "^4.1.1",
@@ -48,7 +49,7 @@
     "zone.js": "^0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.1101.4",
+    "@angular-devkit/build-angular": "^13.3.2",
     "@angular-eslint/eslint-plugin": "^1.2.0",
     "@angular-eslint/eslint-plugin-template": "^1.2.0",
     "@angular/cli": "^11.1.4",
@@ -71,7 +72,7 @@
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "jenkins-mocha": "^8.0.0",
-    "karma": "~5.2.0",
+    "karma": "^6.3.17",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
